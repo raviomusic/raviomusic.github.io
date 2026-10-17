@@ -1,1075 +1,372 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
-   <link rel="icon" type="image/png" href="ravio_logo.png" />
-<link rel="apple-touch-icon" href="ravio_logo.png" />
-<!-- Meta Description: Include secondary keywords like offline playback, lyrics, EQ -->
-  <meta name="description" content="Download Ravio Music for Android. A 100% free, ad-free music streaming app with Ravio Brain AI, Dual 10-Band EQ, offline playback, and time-synced lyrics. Developed by Raman Chapagain." />
-  
-  <!-- Keywords Tag (Minor ranking factor now, but helps define your niche) -->
-  <meta name="keywords" content="Ravio Music, Ravio APK, free music player android, ad free music streaming, offline music app, dual 10 band eq music player, lyrics music client" />
-   <meta property="og:title" content="Ravio — Pure Music. Zero Limits." />
-<meta property="og:image" content="https://raviomusic.github.io/ravio_logo.png" />
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy — Ravio Music</title>
-   <meta charset="UTF-8" />
+<meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Privacy Policy — Ravio Music</title>
+<meta name="description" content="Official Privacy Policy for Ravio Music. 100% ad-free, zero-telemetry Android music client developed by Raman Chapagain." />
+<meta name="keywords" content="Ravio Music, Ravio privacy policy, ad free music streaming, offline music app" />
+<meta name="theme-color" content="#000000" />
+<link rel="canonical" href="https://raviomusic.github.io/privacy" />
 <link rel="icon" type="image/png" sizes="512x512" href="/ravio_logo.png?v=2" />
 <link rel="apple-touch-icon" href="/ravio_logo.png?v=2" />
-<meta name="theme-color" content="#000000" />
-   <link rel="icon" type="image/png" href="ravio_logo.png" />
-<link rel="apple-touch-icon" href="ravio_logo.png" />
-  <meta name="description" content="Official Privacy Policy for Ravio Music. 100% ad-free, zero-telemetry Android music client developed by Raman Chapagain." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root[data-theme="dark"] {
-      --bg: #000000;
-      --bg-elevated: #0a0a0a;
-      --bg-card: #0d0d0d;
-      --bg-btn: #141414;
-      --bg-btn-hover: #1f1f1f;
-      --bg-btn-active: #0f0f0f;
-      --text: #ffffff;
-      --text-secondary: #a3a3a3;
-      --text-muted: #666666;
-      --border: #222222;
-      --border-hover: #404040;
-      --border-strong: #ffffff;
-      --primary-bg: #ffffff;
-      --primary-text: #000000;
-      --primary-hover: #e5e5e5;
-      --shadow: 0 20px 50px rgba(0, 0, 0, 0.9);
-      --btn-shadow: 0 1px 2px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.07);
-    }
-
-    :root[data-theme="light"] {
-      --bg: #ffffff;
-      --bg-elevated: #fafafa;
-      --bg-card: #f7f7f7;
-      --bg-btn: #ffffff;
-      --bg-btn-hover: #f2f2f2;
-      --bg-btn-active: #e6e6e6;
-      --text: #000000;
-      --text-secondary: #4d4d4d;
-      --text-muted: #808080;
-      --border: #e5e5e5;
-      --border-hover: #b3b3b3;
-      --border-strong: #000000;
-      --primary-bg: #000000;
-      --primary-text: #ffffff;
-      --primary-hover: #262626;
-      --shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
-      --btn-shadow: 0 1px 2px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 1);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      transition: background-color 0.2s ease, color 0.2s ease;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    body {
-      min-height: 100vh;
-      overflow-x: hidden;
-      position: relative;
-    }
-
-    .container {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    /* Top Navbar */
-    header {
-      padding: 1.5rem 0;
-      border-bottom: 1px solid var(--border);
-      position: relative;
-      z-index: 50;
-    }
-
-    .nav-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      text-decoration: none;
-      color: var(--text);
-    }
-
-    .logo-circle {
-      width: 38px;
-      height: 38px;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--bg-btn);
-      border: 1px solid var(--border);
-      overflow: hidden;
-    }
-
-    .logo-circle img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: grayscale(100%) contrast(1.1);
-    }
-
-    .brand-title {
-      font-size: 1.15rem;
-      font-weight: 800;
-      letter-spacing: 0.14em;
-      color: var(--text);
-    }
-
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: var(--text-secondary);
-      font-size: 0.875rem;
-      font-weight: 500;
-      transition: color 0.15s ease;
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--text);
-    }
-
-    /* Functional Segmented Theme Switcher */
-    .theme-switch {
-      width: 56px;
-      height: 30px;
-      border-radius: 6px;
-      background: var(--bg-btn);
-      border: 1px solid var(--border);
-      box-shadow: var(--btn-shadow);
-      position: relative;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 7px;
-      color: var(--text-muted);
-      transition: border-color 0.15s ease, background-color 0.15s ease;
-      outline: none;
-    }
-
-    .theme-switch:hover {
-      border-color: var(--border-hover);
-      color: var(--text);
-    }
-
-    .theme-switch:focus-visible {
-      outline: 2px solid var(--border-strong);
-      outline-offset: 2px;
-    }
-
-    .theme-switch svg {
-      width: 13px;
-      height: 13px;
-      z-index: 1;
-      pointer-events: none;
-    }
-
-    .theme-switch .knob {
-      position: absolute;
-      top: 3px;
-      left: 3px;
-      width: 22px;
-      height: 22px;
-      border-radius: 4px;
-      background: var(--text);
-      transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
-      z-index: 2;
-    }
-
-    :root[data-theme="dark"] .theme-switch .knob {
-      transform: translateX(26px);
-    }
-
-    :root[data-theme="light"] .theme-switch .knob {
-      transform: translateX(0px);
-    }
-
-    /* Page Hero */
-    .policy-hero {
-      padding: 4rem 0 3rem;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .hero-meta-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.35rem 0.75rem;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      background: var(--bg-elevated);
-      color: var(--text-secondary);
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
-
-    .hero-badge-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--text);
-    }
-
-    .policy-hero h1 {
-      font-size: clamp(2.4rem, 4.8vw, 3.75rem);
-      font-weight: 800;
-      line-height: 1.06;
-      letter-spacing: -0.04em;
-      margin-bottom: 1rem;
-    }
-
-    .policy-hero p {
-      font-size: 1.02rem;
-      color: var(--text-secondary);
-      max-width: 720px;
-      line-height: 1.65;
-    }
-
-    .architecture-notice {
-      margin-top: 1.5rem;
-      padding: 0.85rem 1.15rem;
-      background: var(--bg-elevated);
-      border: 1px solid var(--border);
-      border-left: 3px solid var(--text);
-      border-radius: 6px;
-      font-size: 0.85rem;
-      color: var(--text-secondary);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.65rem;
-    }
-
-    .architecture-notice strong {
-      color: var(--text);
-    }
-
-    /* 3 Summary Cards */
-    .summary-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem;
-      padding: 2.5rem 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .s-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 1.4rem 1.5rem;
-    }
-
-    .s-card-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 0.65rem;
-    }
-
-    .s-card-tag {
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-    }
-
-    .s-card h3 {
-      font-size: 1rem;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-      margin-bottom: 0.4rem;
-    }
-
-    .s-card p {
-      font-size: 0.84rem;
-      color: var(--text-secondary);
-      line-height: 1.55;
-    }
-
-    /* Main 2-Column Layout */
-    .policy-layout {
-      display: grid;
-      grid-template-columns: 260px 1fr;
-      gap: 3rem;
-      padding: 3rem 0 4rem;
-      align-items: start;
-    }
-
-    /* Sticky Functional Sidebar */
-    .policy-sidebar {
-      position: sticky;
-      top: 2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
-    }
-
-    .toc-box {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 1.1rem;
-    }
-
-    .toc-title {
-      font-size: 0.72rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--text-muted);
-      margin-bottom: 0.75rem;
-      padding: 0 0.4rem;
-    }
-
-    .toc-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
-    }
-
-    .toc-link {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      text-decoration: none;
-      color: var(--text-secondary);
-      font-size: 0.82rem;
-      font-weight: 500;
-      padding: 0.5rem 0.6rem;
-      border-radius: 6px;
-      border: 1px solid transparent;
-      transition: all 0.15s ease;
-    }
-
-    .toc-link:hover {
-      background: var(--bg-btn);
-      color: var(--text);
-      border-color: var(--border);
-    }
-
-    .toc-num {
-      font-size: 0.7rem;
-      font-variant-numeric: tabular-nums;
-      color: var(--text-muted);
-      font-weight: 600;
-    }
-
-    .sidebar-actions {
-      display: flex;
-      flex-direction: column;
-      gap: 0.55rem;
-    }
-
-    /* Engineered Utility Buttons */
-    .chip-btn {
-      background: var(--bg-btn);
-      border: 1px solid var(--border);
-      box-shadow: var(--btn-shadow);
-      color: var(--text);
-      padding: 0.62rem 0.95rem;
-      border-radius: 7px;
-      font-family: inherit;
-      font-size: 0.82rem;
-      font-weight: 600;
-      letter-spacing: -0.01em;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.55rem;
-      transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
-    }
-
-    .chip-btn-left {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.55rem;
-    }
-
-    .chip-btn:hover {
-      background: var(--bg-btn-hover);
-      border-color: var(--border-hover);
-    }
-
-    .chip-btn:active {
-      background: var(--bg-btn-active);
-      transform: translateY(1px);
-    }
-
-    .chip-btn:focus-visible {
-      outline: 2px solid var(--border-strong);
-      outline-offset: 2px;
-    }
-
-    .chip-btn svg {
-      width: 14px;
-      height: 14px;
-      color: var(--text-secondary);
-      flex-shrink: 0;
-      transition: color 0.15s ease;
-    }
-
-    .chip-btn:hover svg {
-      color: var(--text);
-    }
-
-    .chip-action-hint {
-      color: var(--text-muted);
-      font-size: 0.7rem;
-      font-weight: 600;
-      padding-left: 0.45rem;
-      border-left: 1px solid var(--border);
-    }
-
-    /* Policy Content Sections */
-    .policy-content {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .policy-section {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 2rem;
-      scroll-margin-top: 2rem;
-    }
-
-    .section-index {
-      display: inline-block;
-      font-size: 0.72rem;
-      font-weight: 700;
-      font-variant-numeric: tabular-nums;
-      letter-spacing: 0.08em;
-      color: var(--text-muted);
-      border: 1px solid var(--border);
-      background: var(--bg-elevated);
-      padding: 0.2rem 0.5rem;
-      border-radius: 4px;
-      margin-bottom: 0.75rem;
-    }
-
-    .policy-section h2 {
-      font-size: 1.3rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      margin-bottom: 1rem;
-      color: var(--text);
-    }
-
-    .policy-section p {
-      font-size: 0.92rem;
-      color: var(--text-secondary);
-      line-height: 1.7;
-      margin-bottom: 1rem;
-    }
-
-    .policy-section p:last-child {
-      margin-bottom: 0;
-    }
-
-    .policy-section strong {
-      color: var(--text);
-      font-weight: 600;
-    }
-
-    .policy-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      margin: 1rem 0;
-    }
-
-    .policy-list li {
-      position: relative;
-      padding-left: 1.25rem;
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
-
-    .policy-list li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0.55rem;
-      width: 6px;
-      height: 6px;
-      border-radius: 1px;
-      background: var(--text);
-    }
-
-    /* Monochrome Technical Table */
-    .table-wrap {
-      overflow-x: auto;
-      margin-top: 1.1rem;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      text-align: left;
-      font-size: 0.85rem;
-    }
-
-    th {
-      background: var(--bg-elevated);
-      color: var(--text);
-      font-weight: 600;
-      padding: 0.75rem 1rem;
-      border-bottom: 1px solid var(--border);
-    }
-
-    td {
-      padding: 0.75rem 1rem;
-      color: var(--text-secondary);
-      border-bottom: 1px solid var(--border);
-      line-height: 1.5;
-    }
-
-    tr:last-child td {
-      border-bottom: none;
-    }
-
-    .mono-code {
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-      font-size: 0.78rem;
-      color: var(--text);
-      background: var(--bg-elevated);
-      border: 1px solid var(--border);
-      padding: 0.15rem 0.4rem;
-      border-radius: 4px;
-      white-space: nowrap;
-    }
-
-    /* Contact / Bottom Action Bar */
-    .contact-bar {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 1.75rem 2rem;
-      margin-bottom: 4rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .contact-info h3 {
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin-bottom: 0.25rem;
-    }
-
-    .contact-info p {
-      font-size: 0.875rem;
-      color: var(--text-secondary);
-    }
-
-    .contact-actions {
-      display: flex;
-      gap: 0.65rem;
-      flex-wrap: wrap;
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 2rem 0 3rem;
-      color: var(--text-muted);
-      font-size: 0.84rem;
-      border-top: 1px solid var(--border);
-    }
-
-    footer strong {
-      color: var(--text);
-      font-weight: 600;
-    }
-
-    /* Monochrome Toast */
-    .toast {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      background: var(--primary-bg);
-      color: var(--primary-text);
-      border: 1px solid var(--border);
-      padding: 0.75rem 1.1rem;
-      border-radius: 8px;
-      font-size: 0.84rem;
-      font-weight: 600;
-      box-shadow: var(--shadow);
-      opacity: 0;
-      transform: translateY(12px);
-      pointer-events: none;
-      transition: all 0.2s ease;
-      z-index: 9999;
-    }
-
-    .toast.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @media print {
-      header, .policy-sidebar, .contact-actions, footer {
-        display: none !important;
-      }
-      .policy-layout {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 860px) {
-      .summary-grid {
-        grid-template-columns: 1fr;
-      }
-      .policy-layout {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-      .policy-sidebar {
-        position: static;
-      }
-      .contact-bar {
-        flex-direction: column;
-        text-align: center;
-      }
-      .contact-actions {
-        justify-content: center;
-      }
-    }
-  </style>
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://raviomusic.github.io/privacy" />
+<meta property="og:title" content="Privacy Policy — Ravio Music" />
+<meta property="og:description" content="Zero-telemetry, ad-free Android music client. Read how Ravio handles your data." />
+<meta property="og:image" content="https://raviomusic.github.io/ravio_logo.png?v=2" />
+<meta name="twitter:card" content="summary" />
+<script>
+  try { document.documentElement.setAttribute('data-theme', localStorage.getItem('ravio-theme') === 'light' ? 'light' : 'dark'); } catch (e) {}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root[data-theme="dark"]{--bg:#000;--bg-elevated:#0a0a0a;--bg-card:#0d0d0d;--bg-btn:#141414;--bg-btn-hover:#1f1f1f;--bg-btn-active:#0f0f0f;--text:#fff;--text-secondary:#a3a3a3;--text-muted:#666;--border:#222;--border-hover:#404040;--border-strong:#fff;--primary-bg:#fff;--primary-text:#000;--shadow:0 20px 50px rgba(0,0,0,.9);--btn-shadow:0 1px 2px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.07)}
+:root[data-theme="light"]{--bg:#fff;--bg-elevated:#fafafa;--bg-card:#f7f7f7;--bg-btn:#fff;--bg-btn-hover:#f2f2f2;--bg-btn-active:#e6e6e6;--text:#000;--text-secondary:#4d4d4d;--text-muted:#808080;--border:#e5e5e5;--border-hover:#b3b3b3;--border-strong:#000;--primary-bg:#000;--primary-text:#fff;--shadow:0 20px 40px rgba(0,0,0,.06);--btn-shadow:0 1px 2px rgba(0,0,0,.06),inset 0 1px 0 #fff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background-color:var(--bg);color:var(--text);transition:background-color .2s ease,color .2s ease;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+body{min-height:100vh;overflow-x:hidden;position:relative}
+.container{max-width:1120px;margin:0 auto;padding:0 2rem}
+header{padding:1.5rem 0;border-bottom:1px solid var(--border);position:relative;z-index:50}
+.nav-bar{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:.75rem;text-decoration:none;color:var(--text)}
+.logo-circle{width:38px;height:38px;border-radius:8px;display:flex;align-items:center;justify-content:center;background:var(--bg-btn);border:1px solid var(--border);overflow:hidden}
+.logo-circle img{width:100%;height:100%;object-fit:cover;filter:grayscale(100%) contrast(1.1)}
+.brand-title{font-size:1.15rem;font-weight:800;letter-spacing:.14em;color:var(--text)}
+.nav-right,.nav-links{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.nav-links a{text-decoration:none;color:var(--text-secondary);font-size:.875rem;font-weight:500;transition:color .15s ease}
+.nav-links a:hover,.nav-links a.active{color:var(--text)}
+.theme-switch{width:56px;height:30px;border-radius:6px;background:var(--bg-btn);border:1px solid var(--border);box-shadow:var(--btn-shadow);position:relative;cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:0 7px;color:var(--text-muted);transition:border-color .15s ease,background-color .15s ease;outline:none}
+.theme-switch:hover{border-color:var(--border-hover);color:var(--text)}
+.theme-switch:focus-visible{outline:2px solid var(--border-strong);outline-offset:2px}
+.theme-switch svg{width:13px;height:13px;z-index:1;pointer-events:none}
+.theme-switch .knob{position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:4px;background:var(--text);transition:transform .2s cubic-bezier(.2,.8,.2,1);z-index:2;opacity:.9}
+:root[data-theme="dark"] .theme-switch .knob{transform:translateX(26px)}
+:root[data-theme="light"] .theme-switch .knob{transform:translateX(0)}
+.policy-hero{padding:4rem 0 3rem;border-bottom:1px solid var(--border)}
+.hero-meta-row{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:1.5rem}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;padding:.35rem .75rem;border:1px solid var(--border);border-radius:999px;background:var(--bg-elevated);color:var(--text-secondary);font-size:.75rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.hero-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--text)}
+.policy-hero h1{font-size:clamp(2.4rem,4.8vw,3.75rem);font-weight:800;line-height:1.06;letter-spacing:-.04em;margin-bottom:1rem}
+.policy-hero p{font-size:1.02rem;color:var(--text-secondary);max-width:720px;line-height:1.65}
+.architecture-notice{margin-top:1.5rem;padding:.85rem 1.15rem;background:var(--bg-elevated);border:1px solid var(--border);border-left:3px solid var(--text);border-radius:6px;font-size:.85rem;color:var(--text-secondary);display:inline-flex;align-items:center;gap:.65rem}
+.architecture-notice strong{color:var(--text)}
+.summary-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;padding:2.5rem 0;border-bottom:1px solid var(--border)}
+.s-card{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:1.4rem 1.5rem}
+.s-card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:.65rem}
+.s-card-tag{font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted)}
+.s-card h3{font-size:1rem;font-weight:700;letter-spacing:-.01em;margin-bottom:.4rem}
+.s-card p{font-size:.84rem;color:var(--text-secondary);line-height:1.55}
+.policy-layout{display:grid;grid-template-columns:260px 1fr;gap:3rem;padding:3rem 0 4rem;align-items:start}
+.policy-sidebar{position:sticky;top:2rem;display:flex;flex-direction:column;gap:1.25rem}
+.toc-box{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:1.1rem}
+.toc-title{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);margin-bottom:.75rem;padding:0 .4rem}
+.toc-list{list-style:none;display:flex;flex-direction:column;gap:.25rem}
+.toc-link{display:flex;align-items:center;justify-content:space-between;text-decoration:none;color:var(--text-secondary);font-size:.82rem;font-weight:500;padding:.5rem .6rem;border-radius:6px;border:1px solid transparent;transition:all .15s ease}
+.toc-link:hover{background:var(--bg-btn);color:var(--text);border-color:var(--border)}
+.toc-num{font-size:.7rem;font-variant-numeric:tabular-nums;color:var(--text-muted);font-weight:600}
+.sidebar-actions{display:flex;flex-direction:column;gap:.55rem}
+.chip-btn{background:var(--bg-btn);border:1px solid var(--border);box-shadow:var(--btn-shadow);color:var(--text);padding:.62rem .95rem;border-radius:7px;font-family:inherit;font-size:.82rem;font-weight:600;letter-spacing:-.01em;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:space-between;gap:.55rem;transition:background-color .15s ease,border-color .15s ease,transform .1s ease}
+.chip-btn-left{display:inline-flex;align-items:center;gap:.55rem}
+.chip-btn:hover{background:var(--bg-btn-hover);border-color:var(--border-hover)}
+.chip-btn:active{background:var(--bg-btn-active);transform:translateY(1px)}
+.chip-btn:focus-visible{outline:2px solid var(--border-strong);outline-offset:2px}
+.chip-btn svg{width:14px;height:14px;color:var(--text-secondary);flex-shrink:0;transition:color .15s ease}
+.chip-btn:hover svg{color:var(--text)}
+.chip-action-hint{color:var(--text-muted);font-size:.7rem;font-weight:600;padding-left:.45rem;border-left:1px solid var(--border)}
+.policy-content{display:flex;flex-direction:column;gap:1.5rem}
+.policy-section{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:2rem;scroll-margin-top:2rem}
+.section-index{display:inline-block;font-size:.72rem;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:.08em;color:var(--text-muted);border:1px solid var(--border);background:var(--bg-elevated);padding:.2rem .5rem;border-radius:4px;margin-bottom:.75rem}
+.policy-section h2{font-size:1.3rem;font-weight:700;letter-spacing:-.02em;margin-bottom:1rem;color:var(--text)}
+.policy-section p{font-size:.92rem;color:var(--text-secondary);line-height:1.7;margin-bottom:1rem}
+.policy-section p:last-child{margin-bottom:0}
+.policy-section strong{color:var(--text);font-weight:600}
+.policy-list{list-style:none;display:flex;flex-direction:column;gap:.75rem;margin:1rem 0}
+.policy-list li{position:relative;padding-left:1.25rem;font-size:.9rem;color:var(--text-secondary);line-height:1.6}
+.policy-list li::before{content:"";position:absolute;left:0;top:.55rem;width:6px;height:6px;border-radius:1px;background:var(--text)}
+.table-wrap{overflow-x:auto;margin-top:1.1rem;border:1px solid var(--border);border-radius:8px}
+table{width:100%;border-collapse:collapse;text-align:left;font-size:.85rem}
+th{background:var(--bg-elevated);color:var(--text);font-weight:600;padding:.75rem 1rem;border-bottom:1px solid var(--border)}
+td{padding:.75rem 1rem;color:var(--text-secondary);border-bottom:1px solid var(--border);line-height:1.5}
+tr:last-child td{border-bottom:none}
+.mono-code{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;font-size:.78rem;color:var(--text);background:var(--bg-elevated);border:1px solid var(--border);padding:.15rem .4rem;border-radius:4px;white-space:nowrap}
+.contact-bar{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:1.75rem 2rem;margin-bottom:4rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
+.contact-info h3{font-size:1.1rem;font-weight:700;margin-bottom:.25rem}
+.contact-info p{font-size:.875rem;color:var(--text-secondary)}
+.contact-actions{display:flex;gap:.65rem;flex-wrap:wrap}
+footer{text-align:center;padding:2rem 0 3rem;color:var(--text-muted);font-size:.84rem;border-top:1px solid var(--border)}
+footer strong{color:var(--text);font-weight:600}
+.toast{position:fixed;bottom:24px;right:24px;background:var(--primary-bg);color:var(--primary-text);border:1px solid var(--border);padding:.75rem 1.1rem;border-radius:8px;font-size:.84rem;font-weight:600;box-shadow:var(--shadow);opacity:0;transform:translateY(12px);pointer-events:none;transition:all .2s ease;z-index:9999}
+.toast.show{opacity:1;transform:translateY(0)}
+@media print{header,.policy-sidebar,.contact-actions,footer{display:none!important}.policy-layout{grid-template-columns:1fr}}
+@media (max-width:860px){
+.summary-grid{grid-template-columns:1fr}
+.policy-layout{grid-template-columns:1fr;gap:2rem}
+.policy-sidebar{position:static}
+.contact-bar{flex-direction:column;text-align:center}
+.contact-actions{justify-content:center}
+}
+</style>
 </head>
 <body>
-
-  <div class="container">
-    <!-- Top Header -->
-    <header>
-      <div class="nav-bar">
-        <a href="/" class="brand">
-          <div class="logo-circle">
-            <img src="ravio_logo.png" alt="Ravio Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
-            <svg style="display:none;" width="22" height="22" viewBox="0 0 100 100" fill="none">
-              <circle cx="50" cy="50" r="44" stroke="currentColor" stroke-width="6"/>
-              <path d="M34 32H52C60 32 65 37 65 44C65 50 60 54 53 55L66 72H56L44 55H38V72H31V32H34Z" fill="currentColor"/>
-            </svg>
-          </div>
-          <span class="brand-title">RAVIO</span>
-        </a>
-
-        <div class="nav-right">
-          <nav class="nav-links">
-            <a href="/#download">Download</a>
-            <a href="/privacy" class="active">Privacy Policy</a>
-            <a href="/terms">Terms of Service</a>
-            <a href="/#support">Support</a>
-            <a href="https://ramanchapagain.github.io" target="_blank" rel="noopener">Dev Website</a>
-          </nav>
-
-          <!-- Monochrome SVG Theme Switch -->
-          <button class="theme-switch" id="themeSwitch" type="button" aria-label="Toggle Light and Dark Mode">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="5"/>
-              <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
-            </svg>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-            </svg>
-            <span class="knob"></span>
-          </button>
-        </div>
-      </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="policy-hero">
-      <div class="hero-meta-row">
-        <div class="hero-badge">
-          <span class="hero-badge-dot"></span>
-          Legal Documentation • Effective Oct 2026
-        </div>
-        <a href="/" class="chip-btn">
-          <span class="chip-btn-left">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="19" y1="12" x2="5" y2="12"/>
-              <polyline points="12 19 5 12 12 5"/>
-            </svg>
-            Back to Home
-          </span>
-        </a>
-      </div>
-
-      <h1>Privacy Policy.</h1>
-      <p>
-        Ravio Music is engineered by Raman Chapagain with a strict local-first, zero-telemetry architecture. We do not run advertising networks, we do not track your listening behavior, and we do not operate backend servers that harvest your personal data.
-      </p>
-
-      <div class="architecture-notice">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-        </svg>
-        <span><strong>Zero-Telemetry Architecture:</strong> Ravio Music operates entirely on your device without proprietary cloud tracking or user profiling.</span>
-      </div>
-    </section>
-
-    <!-- 3 Key Pillars -->
-    <section class="summary-grid">
-      <div class="s-card">
-        <div class="s-card-top">
-          <span class="s-card-tag">01 // Telemetry</span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+<div class="container">
+  <header>
+    <div class="nav-bar">
+      <a href="/" class="brand">
+        <div class="logo-circle">
+          <img src="/ravio_logo.png" alt="Ravio Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+          <svg style="display:none;" width="22" height="22" viewBox="0 0 100 100" fill="none">
+            <circle cx="50" cy="50" r="44" stroke="currentColor" stroke-width="6"/>
+            <path d="M34 32H52C60 32 65 37 65 44C65 50 60 54 53 55L66 72H56L44 55H38V72H31V32H34Z" fill="currentColor"/>
           </svg>
         </div>
-        <h3>Zero Data Harvesting</h3>
-        <p>No analytics SDKs, crash-tracking spyware, or behavioral profiling scripts are bundled inside the Ravio APK.</p>
-      </div>
-
-      <div class="s-card">
-        <div class="s-card-top">
-          <span class="s-card-tag">02 // Monetization</span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="10"/>
-            <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/>
+        <span class="brand-title">RAVIO</span>
+      </a>
+      <div class="nav-right">
+        <nav class="nav-links">
+          <a href="/#download">Download</a>
+          <a href="/privacy" class="active">Privacy Policy</a>
+          <a href="/terms">Terms of Service</a>
+          <a href="/#support">Support</a>
+          <a href="https://ramanchapagain.github.io" target="_blank" rel="noopener">Dev Website</a>
+        </nav>
+        <button class="theme-switch" id="themeSwitch" type="button" aria-label="Toggle Light and Dark Mode">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"/>
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
           </svg>
-        </div>
-        <h3>100% Ad-Free Forever</h3>
-        <p>Ravio contains zero ad banners, audio interruptions, or advertising identifiers. Your data is never sold or shared with brokers.</p>
-      </div>
-
-      <div class="s-card">
-        <div class="s-card-top">
-          <span class="s-card-tag">03 // Storage</span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/>
-            <rect x="2" y="14" width="20" height="8" rx="2" ry="2"/>
-            <line x1="6" y1="6" x2="6.01" y2="6"/>
-            <line x1="6" y1="18" x2="6.01" y2="18"/>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
           </svg>
-        </div>
-        <h3>On-Device Database</h3>
-        <p>Playlists, listening history, Equalizer DSP profiles, and cached offline songs reside strictly on your phone's internal storage.</p>
+          <span class="knob"></span>
+        </button>
       </div>
-    </section>
-
-    <!-- Main Policy Body -->
-    <div class="policy-layout">
-      <!-- Sticky Sidebar -->
-      <aside class="policy-sidebar">
-        <div class="toc-box">
-          <div class="toc-title">Contents</div>
-          <ul class="toc-list">
-            <li><a href="#overview" class="toc-link"><span>Overview & Scope</span><span class="toc-num">01</span></a></li>
-            <li><a href="#local-data" class="toc-link"><span>Local Data Storage</span><span class="toc-num">02</span></a></li>
-            <li><a href="#ai-features" class="toc-link"><span>Ravio Brain AI</span><span class="toc-num">03</span></a></li>
-            <li><a href="#ravio-find" class="toc-link"><span>Ravio Find (Mic)</span><span class="toc-num">04</span></a></li>
-            <li><a href="#third-party" class="toc-link"><span>Streaming & Lyrics</span><span class="toc-num">05</span></a></li>
-            <li><a href="#permissions" class="toc-link"><span>Device Permissions</span><span class="toc-num">06</span></a></li>
-            <li><a href="#user-control" class="toc-link"><span>Data Deletion</span><span class="toc-num">07</span></a></li>
-          </ul>
-        </div>
-
-        <div class="sidebar-actions">
-          <button class="chip-btn" type="button" onclick="window.print()">
-            <span class="chip-btn-left">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="6 9 6 2 18 2 18 9"/>
-                <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
-                <rect x="6" y="14" width="12" height="8"/>
-              </svg>
-              Print / Save PDF
-            </span>
-            <span class="chip-action-hint">DOC</span>
-          </button>
-
-          <button class="chip-btn" type="button" onclick="copyPageUrl()">
-            <span class="chip-btn-left">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
-                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
-              </svg>
-              Copy Policy URL
-            </span>
-            <span class="chip-action-hint">Copy</span>
-          </button>
-        </div>
-      </aside>
-
-      <!-- Detailed Sections -->
-      <main class="policy-content">
-        <section class="policy-section" id="overview">
-          <span class="section-index">SECTION 01</span>
-          <h2>Overview & Scope</h2>
-          <p>
-            This Privacy Policy governs the use of the <strong>Ravio Music</strong> Android application and its official website, developed and maintained by <strong>Raman Chapagain</strong>.
-          </p>
-          <p>
-            Ravio Music is a standalone, free-to-use, ad-free music streaming and local audio player client. Because we do not maintain centralized user accounts or proprietary cloud databases, <strong>we cannot view, access, or monetize your personal information</strong>.
-          </p>
-        </section>
-
-        <section class="policy-section" id="local-data">
-          <span class="section-index">SECTION 02</span>
-          <h2>Information Stored Locally on Your Device</h2>
-          <p>
-            All data generated while using Ravio Music is stored locally inside your Android device's sandboxed application directory. This includes:
-          </p>
-          <ul class="policy-list">
-            <li><strong>Library & Playback History:</strong> Liked tracks, custom playlists, local queue states, and listening stats used to power your on-device recommendations.</li>
-            <li><strong>Audio & DSP Configuration:</strong> Your Dual 10-Band Equalizer curves, bass boost levels, pitch/tempo settings, and Material You / AMOLED UI preferences.</li>
-            <li><strong>Offline Cache & Downloads:</strong> Audio streams and album artwork cached for offline playback remain strictly on your device storage.</li>
-            <li><strong>Optional Streaming Authentication:</strong> If you choose to sign in with your third-party streaming account to sync playlists, your session cookies/tokens are stored locally using Android's encrypted storage and are only transmitted directly to the streaming provider.</li>
-          </ul>
-        </section>
-
-        <section class="policy-section" id="ai-features">
-          <span class="section-index">SECTION 03</span>
-          <h2>Ravio Brain AI & Live Translations</h2>
-          <p>
-            Ravio includes <strong>Ravio Brain AI</strong> to generate custom taste mixes, Vibe Summaries, Song DNA backstories, and real-time lyrics translations.
-          </p>
-          <ul class="policy-list">
-            <li><strong>Zero PII Transmission:</strong> When you trigger an AI feature, the app sends only the relevant song metadata (track title, artist name, or lyric lines) required to fulfill the prompt.</li>
-            <li><strong>No Background Profiling:</strong> AI requests are executed strictly on-demand when you interact with Ravio Brain features and are never linked to your personal identity, device ID, or contacts.</li>
-          </ul>
-        </section>
-
-        <section class="policy-section" id="ravio-find">
-          <span class="section-index">SECTION 04</span>
-          <h2>Ravio Find (Audio Recognition & Microphone)</h2>
-          <p>
-            Ravio Music features <strong>Ravio Find</strong>, allowing you to identify music playing around you.
-          </p>
-          <ul class="policy-list">
-            <li><strong>Strictly User-Initiated:</strong> Ravio only accesses your device's microphone when you explicitly tap the Ravio Find recognition button. It never listens in the background.</li>
-            <li><strong>Ephemeral Audio Fingerprinting:</strong> A short audio snippet (typically 3–5 seconds) is converted into an acoustic fingerprint to match against public music databases and is immediately discarded once a match is returned.</li>
-          </ul>
-        </section>
-
-        <section class="policy-section" id="third-party">
-          <span class="section-index">SECTION 05</span>
-          <h2>Third-Party Streaming & Lyrics APIs</h2>
-          <p>
-            To stream audio, fetch album artwork, and display time-synced lyrics, your device makes direct HTTPS requests to third-party APIs:
-          </p>
-          <ul class="policy-list">
-            <li><strong>Music Streaming Services:</strong> Public media streams, search queries, and artist metadata are fetched directly from upstream streaming servers (such as YouTube Music / InnerTube endpoints).</li>
-            <li><strong>Time-Synced Lyrics Providers:</strong> When playing a track, Ravio queries public lyrics databases (such as LRCLIB or Musixmatch) using only the track's title, artist, and duration.</li>
-          </ul>
-          <p>
-            Because your device connects directly to these endpoints to retrieve media, those services may see your standard network IP address just like any web browser. Ravio does not proxy, log, or intercept these requests.
-          </p>
-        </section>
-
-        <section class="policy-section" id="permissions">
-          <span class="section-index">SECTION 06</span>
-          <h2>Android Device Permissions</h2>
-          <p>
-            Ravio requests only the minimum Android system permissions necessary to deliver uninterrupted audio playback and hardware integration:
-          </p>
-
-          <div class="table-wrap">
-            <table>
-              <thead>
-                <tr>
-                  <th>Permission</th>
-                  <th>Technical Purpose in Ravio</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><span class="mono-code">INTERNET</span></td>
-                  <td>Streams audio, downloads updates, fetches synced lyrics, and queries Ravio Brain AI.</td>
-                </tr>
-                <tr>
-                  <td><span class="mono-code">FOREGROUND_SERVICE</span></td>
-                  <td>Ensures uninterrupted background music playback when your screen is off or while using Android Auto.</td>
-                </tr>
-                <tr>
-                  <td><span class="mono-code">READ_MEDIA_AUDIO</span></td>
-                  <td>Allows playing local MP3/FLAC/WAV audio files stored on your device and managing offline song downloads.</td>
-                </tr>
-                <tr>
-                  <td><span class="mono-code">RECORD_AUDIO</span></td>
-                  <td>Optional. Used exclusively when you manually activate <strong>Ravio Find</strong> to identify a song.</td>
-                </tr>
-                <tr>
-                  <td><span class="mono-code">POST_NOTIFICATIONS</span></td>
-                  <td>Displays the persistent media playback notification with play, pause, and skip controls.</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-
-        <section class="policy-section" id="user-control">
-          <span class="section-index">SECTION 07</span>
-          <h2>Data Retention, Backups & Complete Deletion</h2>
-          <p>
-            You retain 100% ownership and control over your data at all times:
-          </p>
-          <ul class="policy-list">
-            <li><strong>Local Backup & Restore:</strong> You can export your database, playlists, and settings into a local backup file to transfer between devices at any time.</li>
-            <li><strong>Instant Deletion:</strong> Clearing the app storage in Android Settings or uninstalling Ravio Music permanently and irreversibly erases all history, cached songs, and tokens from your device. Since we hold no copies on any server, nothing remains after uninstallation.</li>
-          </ul>
-        </section>
-      </main>
     </div>
+  </header>
 
-    <!-- Developer Contact & Verification Bar -->
-    <section class="contact-bar">
-      <div class="contact-info">
-        <h3>Questions regarding privacy or data handling?</h3>
-        <p>Developed and maintained by <strong>Raman Chapagain</strong>. Reach out via the official links below.</p>
+  <section class="policy-hero">
+    <div class="hero-meta-row">
+      <div class="hero-badge"><span class="hero-badge-dot"></span>Legal Documentation • Effective Oct 2026</div>
+      <a href="/" class="chip-btn">
+        <span class="chip-btn-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          Back to Home
+        </span>
+      </a>
+    </div>
+    <h1>Privacy Policy.</h1>
+    <p>Ravio Music is engineered by Raman Chapagain with a strict local-first, zero-telemetry architecture. We do not run advertising networks, we do not track your listening behavior, and we do not operate backend servers that harvest your personal data.</p>
+    <div class="architecture-notice">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      <span><strong>Zero-Telemetry Architecture:</strong> Ravio Music operates entirely on your device without proprietary cloud tracking or user profiling.</span>
+    </div>
+  </section>
+
+  <section class="summary-grid">
+    <div class="s-card">
+      <div class="s-card-top">
+        <span class="s-card-tag">01 // Telemetry</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
       </div>
-
-      <div class="contact-actions">
-        <a href="https://ramanchapagain.github.io" target="_blank" rel="noopener" class="chip-btn">
-          <span class="chip-btn-left">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-              <polyline points="15 3 21 3 21 9"/>
-              <line x1="10" y1="14" x2="21" y2="3"/>
-            </svg>
-            Developer Website
-          </span>
-        </a>
-
-        <a href="/terms" class="chip-btn">
-          <span class="chip-btn-left">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-              <polyline points="14 2 14 8 20 8"/>
-            </svg>
-            Terms of Service
-          </span>
-        </a>
+      <h3>Zero Data Harvesting</h3>
+      <p>No analytics SDKs, crash-tracking spyware, or behavioral profiling scripts are bundled inside the Ravio APK.</p>
+    </div>
+    <div class="s-card">
+      <div class="s-card-top">
+        <span class="s-card-tag">02 // Monetization</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
       </div>
-    </section>
+      <h3>100% Ad-Free Forever</h3>
+      <p>Ravio contains zero ad banners, audio interruptions, or advertising identifiers. Your data is never sold or shared with brokers.</p>
+    </div>
+    <div class="s-card">
+      <div class="s-card-top">
+        <span class="s-card-tag">03 // Storage</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+      </div>
+      <h3>On-Device Database</h3>
+      <p>Playlists, listening history, Equalizer DSP profiles, and cached offline songs reside strictly on your phone's internal storage.</p>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer>
-      Developed by <strong>Raman Chapagain</strong> • © <span id="year"></span> Ravio Music. All rights reserved.
-    </footer>
+  <div class="policy-layout">
+    <aside class="policy-sidebar">
+      <div class="toc-box">
+        <div class="toc-title">Contents</div>
+        <ul class="toc-list">
+          <li><a href="#overview" class="toc-link"><span>Overview &amp; Scope</span><span class="toc-num">01</span></a></li>
+          <li><a href="#local-data" class="toc-link"><span>Local Data Storage</span><span class="toc-num">02</span></a></li>
+          <li><a href="#ai-features" class="toc-link"><span>Ravio Brain AI</span><span class="toc-num">03</span></a></li>
+          <li><a href="#ravio-find" class="toc-link"><span>Ravio Find (Mic)</span><span class="toc-num">04</span></a></li>
+          <li><a href="#third-party" class="toc-link"><span>Streaming &amp; Lyrics</span><span class="toc-num">05</span></a></li>
+          <li><a href="#permissions" class="toc-link"><span>Device Permissions</span><span class="toc-num">06</span></a></li>
+          <li><a href="#user-control" class="toc-link"><span>Data Deletion</span><span class="toc-num">07</span></a></li>
+        </ul>
+      </div>
+      <div class="sidebar-actions">
+        <button class="chip-btn" type="button" onclick="window.print()">
+          <span class="chip-btn-left">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+            Print / Save PDF
+          </span>
+          <span class="chip-action-hint">DOC</span>
+        </button>
+        <button class="chip-btn" type="button" onclick="copyPageUrl()">
+          <span class="chip-btn-left">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            Copy Policy URL
+          </span>
+          <span class="chip-action-hint">Copy</span>
+        </button>
+      </div>
+    </aside>
+
+    <main class="policy-content">
+      <section class="policy-section" id="overview">
+        <span class="section-index">SECTION 01</span>
+        <h2>Overview &amp; Scope</h2>
+        <p>This Privacy Policy governs the use of the <strong>Ravio Music</strong> Android application and its official website, developed and maintained by <strong>Raman Chapagain</strong>.</p>
+        <p>Ravio Music is a standalone, free-to-use, ad-free music streaming and local audio player client. Because we do not maintain centralized user accounts or proprietary cloud databases, <strong>we cannot view, access, or monetize your personal information</strong>.</p>
+      </section>
+
+      <section class="policy-section" id="local-data">
+        <span class="section-index">SECTION 02</span>
+        <h2>Information Stored Locally on Your Device</h2>
+        <p>All data generated while using Ravio Music is stored locally inside your Android device's sandboxed application directory. This includes:</p>
+        <ul class="policy-list">
+          <li><strong>Library &amp; Playback History:</strong> Liked tracks, custom playlists, local queue states, and listening stats used to power your on-device recommendations.</li>
+          <li><strong>Audio &amp; DSP Configuration:</strong> Your Dual 10-Band Equalizer curves, bass boost levels, pitch/tempo settings, and Material You / AMOLED UI preferences.</li>
+          <li><strong>Offline Cache &amp; Downloads:</strong> Audio streams and album artwork cached for offline playback remain strictly on your device storage.</li>
+          <li><strong>Optional Streaming Authentication:</strong> If you choose to sign in with your third-party streaming account to sync playlists, your session cookies/tokens are stored locally using Android's encrypted storage and are only transmitted directly to the streaming provider.</li>
+        </ul>
+      </section>
+
+      <section class="policy-section" id="ai-features">
+        <span class="section-index">SECTION 03</span>
+        <h2>Ravio Brain AI &amp; Live Translations</h2>
+        <p>Ravio includes <strong>Ravio Brain AI</strong> to generate custom taste mixes, Vibe Summaries, Song DNA backstories, and real-time lyrics translations.</p>
+        <ul class="policy-list">
+          <li><strong>Zero PII Transmission:</strong> When you trigger an AI feature, the app sends only the relevant song metadata (track title, artist name, or lyric lines) required to fulfill the prompt.</li>
+          <li><strong>No Background Profiling:</strong> AI requests are executed strictly on-demand when you interact with Ravio Brain features and are never linked to your personal identity, device ID, or contacts.</li>
+        </ul>
+      </section>
+
+      <section class="policy-section" id="ravio-find">
+        <span class="section-index">SECTION 04</span>
+        <h2>Ravio Find (Audio Recognition &amp; Microphone)</h2>
+        <p>Ravio Music features <strong>Ravio Find</strong>, allowing you to identify music playing around you.</p>
+        <ul class="policy-list">
+          <li><strong>Strictly User-Initiated:</strong> Ravio only accesses your device's microphone when you explicitly tap the Ravio Find recognition button. It never listens in the background.</li>
+          <li><strong>Ephemeral Audio Fingerprinting:</strong> A short audio snippet (typically 3–5 seconds) is converted into an acoustic fingerprint to match against public music databases and is immediately discarded once a match is returned.</li>
+        </ul>
+      </section>
+
+      <section class="policy-section" id="third-party">
+        <span class="section-index">SECTION 05</span>
+        <h2>Third-Party Streaming &amp; Lyrics APIs</h2>
+        <p>To stream audio, fetch album artwork, and display time-synced lyrics, your device makes direct HTTPS requests to third-party APIs:</p>
+        <ul class="policy-list">
+          <li><strong>Music Streaming Services:</strong> Public media streams, search queries, and artist metadata are fetched directly from upstream streaming servers (such as YouTube Music / InnerTube endpoints).</li>
+          <li><strong>Time-Synced Lyrics Providers:</strong> When playing a track, Ravio queries public lyrics databases (such as LRCLIB or Musixmatch) using only the track's title, artist, and duration.</li>
+        </ul>
+        <p>Because your device connects directly to these endpoints to retrieve media, those services may see your standard network IP address just like any web browser. Ravio does not proxy, log, or intercept these requests.</p>
+      </section>
+
+      <section class="policy-section" id="permissions">
+        <span class="section-index">SECTION 06</span>
+        <h2>Android Device Permissions</h2>
+        <p>Ravio requests only the minimum Android system permissions necessary to deliver uninterrupted audio playback and hardware integration:</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Permission</th><th>Technical Purpose in Ravio</th></tr></thead>
+            <tbody>
+              <tr><td><span class="mono-code">INTERNET</span></td><td>Streams audio, downloads updates, fetches synced lyrics, and queries Ravio Brain AI.</td></tr>
+              <tr><td><span class="mono-code">FOREGROUND_SERVICE</span></td><td>Ensures uninterrupted background music playback when your screen is off or while using Android Auto.</td></tr>
+              <tr><td><span class="mono-code">READ_MEDIA_AUDIO</span></td><td>Allows playing local MP3/FLAC/WAV audio files stored on your device and managing offline song downloads.</td></tr>
+              <tr><td><span class="mono-code">RECORD_AUDIO</span></td><td>Optional. Used exclusively when you manually activate <strong>Ravio Find</strong> to identify a song.</td></tr>
+              <tr><td><span class="mono-code">POST_NOTIFICATIONS</span></td><td>Displays the persistent media playback notification with play, pause, and skip controls.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="policy-section" id="user-control">
+        <span class="section-index">SECTION 07</span>
+        <h2>Data Retention, Backups &amp; Complete Deletion</h2>
+        <p>You retain 100% ownership and control over your data at all times:</p>
+        <ul class="policy-list">
+          <li><strong>Local Backup &amp; Restore:</strong> You can export your database, playlists, and settings into a local backup file to transfer between devices at any time.</li>
+          <li><strong>Instant Deletion:</strong> Clearing the app storage in Android Settings or uninstalling Ravio Music permanently and irreversibly erases all history, cached songs, and tokens from your device. Since we hold no copies on any server, nothing remains after uninstallation.</li>
+        </ul>
+      </section>
+    </main>
   </div>
 
-  <div class="toast" id="toast">Link copied to clipboard</div>
+  <section class="contact-bar">
+    <div class="contact-info">
+      <h3>Questions regarding privacy or data handling?</h3>
+      <p>Developed and maintained by <strong>Raman Chapagain</strong>. Reach out via the official links below.</p>
+    </div>
+    <div class="contact-actions">
+      <a href="https://ramanchapagain.github.io" target="_blank" rel="noopener" class="chip-btn">
+        <span class="chip-btn-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Developer Website
+        </span>
+      </a>
+      <a href="/terms" class="chip-btn">
+        <span class="chip-btn-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Terms of Service
+        </span>
+      </a>
+    </div>
+  </section>
 
-  <script>
-    // 1. Synced Light / Dark Theme Toggle
-    const root = document.documentElement;
-    const themeSwitch = document.getElementById('themeSwitch');
-    const toast = document.getElementById('toast');
-    document.getElementById('year').textContent = new Date().getFullYear();
+  <footer>Developed by <strong>Raman Chapagain</strong> • © <span id="year"></span> Ravio Music. All rights reserved.</footer>
+</div>
 
-    const savedTheme = localStorage.getItem('ravio-theme') || 'dark';
-    root.setAttribute('data-theme', savedTheme);
+<div class="toast" id="toast" role="status" aria-live="polite">Link copied to clipboard</div>
 
-    themeSwitch.addEventListener('click', () => {
-      const current = root.getAttribute('data-theme');
-      const next = current === 'dark' ? 'light' : 'dark';
-      root.setAttribute('data-theme', next);
-      localStorage.setItem('ravio-theme', next);
-    });
+<script>
+(function () {
+  'use strict';
+  var root = document.documentElement;
+  var toast = document.getElementById('toast');
+  document.getElementById('year').textContent = new Date().getFullYear();
 
-    // 2. Copy Page URL Utility
-    let toastTimer;
-    function showToast(message) {
-      clearTimeout(toastTimer);
-      toast.textContent = message;
-      toast.classList.add('show');
-      toastTimer = setTimeout(() => toast.classList.remove('show'), 2400);
-    }
+  document.getElementById('themeSwitch').addEventListener('click', function () {
+    var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('ravio-theme', next); } catch (e) {}
+  });
 
-    function copyPageUrl() {
-      const url = window.location.href;
-      if (navigator.clipboard && window.isSecureContext) {
-        navigator.clipboard.writeText(url).then(() => {
-          showToast('Privacy Policy URL copied to clipboard');
-        }).catch(() => fallbackCopy(url));
-      } else {
-        fallbackCopy(url);
-      }
-    }
-
-    function fallbackCopy(value) {
-      const tempInput = document.createElement('textarea');
-      tempInput.value = value;
-      tempInput.style.position = 'fixed';
-      tempInput.style.opacity = '0';
-      document.body.appendChild(tempInput);
-      tempInput.focus();
-      tempInput.select();
-      try {
-        document.execCommand('copy');
-        showToast('Privacy Policy URL copied to clipboard');
-      } catch (e) {
-        showToast(value);
-      }
-      document.body.removeChild(tempInput);
-    }
-  </script>
+  var toastTimer;
+  function showToast(msg) {
+    clearTimeout(toastTimer);
+    toast.textContent = msg;
+    toast.classList.add('show');
+    toastTimer = setTimeout(function () { toast.classList.remove('show'); }, 2400);
+  }
+  function fallbackCopy(value) {
+    var t = document.createElement('textarea');
+    t.value = value; t.style.position = 'fixed'; t.style.opacity = '0';
+    document.body.appendChild(t); t.focus(); t.select();
+    try { document.execCommand('copy'); showToast('Privacy Policy URL copied to clipboard'); }
+    catch (e) { showToast(value); }
+    document.body.removeChild(t);
+  }
+  window.copyPageUrl = function () {
+    var url = window.location.href;
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(url)
+        .then(function () { showToast('Privacy Policy URL copied to clipboard'); })
+        .catch(function () { fallbackCopy(url); });
+    } else { fallbackCopy(url); }
+  };
+})();
+</script>
 </body>
 </html>
