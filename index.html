@@ -4,7 +4,8 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Ravio — Pure Music. Zero Limits.</title>
-<meta name="description" content="Ravio is a free, ad-free music streaming client for Android with Ravio Brain AI, Dual 10-Band EQ, offline playback and synced lyrics. Developed by Raman Chapagain." />
+<meta name="description" content="Download Ravio Music for Android. A free, ad-free music streaming app with Ravio Brain AI, Dual 10-Band EQ, offline playback and time-synced lyrics. Developed by Raman Chapagain." />
+<meta name="keywords" content="Ravio Music, Ravio APK, free music player android, ad free music streaming, offline music app, dual 10 band eq music player, lyrics music client" />
 <meta name="theme-color" content="#000000" />
 <link rel="canonical" href="https://raviomusic.github.io/" />
 <link rel="icon" type="image/png" href="ravio_logo.png" />
@@ -16,1264 +17,440 @@
 <meta property="og:image" content="https://raviomusic.github.io/ravio_logo.png" />
 <meta name="twitter:card" content="summary" />
 <script>
-  try { document.documentElement.setAttribute('data-theme', localStorage.getItem('ravio-theme') || 'dark'); } catch (e) {}
+  try { document.documentElement.setAttribute('data-theme', localStorage.getItem('ravio-theme') === 'light' ? 'light' : 'dark'); } catch (e) {}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root[data-theme="dark"] {
-      --bg: #000000;
-      --bg-elevated: #0a0a0a;
-      --bg-card: #0d0d0d;
-      --bg-btn: #141414;
-      --bg-btn-hover: #1f1f1f;
-      --bg-btn-active: #0f0f0f;
-      --text: #ffffff;
-      --text-secondary: #a3a3a3;
-      --text-muted: #666666;
-      --border: #222222;
-      --border-hover: #404040;
-      --border-strong: #ffffff;
-      --primary-bg: #ffffff;
-      --primary-text: #000000;
-      --primary-hover: #e5e5e5;
-      --btn-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.08);
-      --shadow: 0 20px 50px rgba(0, 0, 0, 0.9);
-      --btn-shadow: 0 1px 2px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.07);
-    }
-
-    :root[data-theme="light"] {
-      --bg: #ffffff;
-      --bg-elevated: #fafafa;
-      --bg-card: #f7f7f7;
-      --bg-btn: #ffffff;
-      --bg-btn-hover: #f2f2f2;
-      --bg-btn-active: #e6e6e6;
-      --text: #000000;
-      --text-secondary: #4d4d4d;
-      --text-muted: #808080;
-      --border: #e5e5e5;
-      --border-hover: #b3b3b3;
-      --border-strong: #000000;
-      --primary-bg: #000000;
-      --primary-text: #ffffff;
-      --primary-hover: #262626;
-      --btn-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.8);
-      --shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
-      --btn-shadow: 0 1px 2px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 1);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      transition: background-color 0.2s ease, color 0.2s ease;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    body {
-      min-height: 100vh;
-      overflow-x: hidden;
-      position: relative;
-    }
-
-    .container {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    /* Top Navbar */
-    header {
-      padding: 1.5rem 0;
-      border-bottom: 1px solid var(--border);
-      position: relative;
-      z-index: 50;
-    }
-
-    .nav-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      text-decoration: none;
-      color: var(--text);
-    }
-
-    .logo-circle {
-      width: 38px;
-      height: 38px;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--bg-btn);
-      border: 1px solid var(--border);
-      overflow: hidden;
-    }
-
-    .logo-circle img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: grayscale(100%) contrast(1.1);
-    }
-
-    .brand-title {
-      font-size: 1.15rem;
-      font-weight: 800;
-      letter-spacing: 0.14em;
-      color: var(--text);
-    }
-
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: var(--text-secondary);
-      font-size: 0.875rem;
-      font-weight: 500;
-      transition: color 0.15s ease;
-    }
-
-    .nav-links a:hover {
-      color: var(--text);
-    }
-
-    /* Functional Segmented Theme Switcher */
-    .theme-switch {
-      width: 56px;
-      height: 30px;
-      border-radius: 6px;
-      background: var(--bg-btn);
-      border: 1px solid var(--border);
-      box-shadow: var(--btn-shadow);
-      position: relative;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 7px;
-      color: var(--text-muted);
-      transition: border-color 0.15s ease, background-color 0.15s ease;
-      outline: none;
-    }
-
-    .theme-switch:hover {
-      border-color: var(--border-hover);
-      color: var(--text);
-    }
-
-    .theme-switch:focus-visible {
-      outline: 2px solid var(--border-strong);
-      outline-offset: 2px;
-    }
-
-    .theme-switch svg {
-      width: 13px;
-      height: 13px;
-      z-index: 1;
-      pointer-events: none;
-    }
-
-    .theme-switch .knob {
-      position: absolute;
-      top: 3px;
-      left: 3px;
-      width: 22px;
-      height: 22px;
-      border-radius: 4px;
-      background: var(--text);
-      transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
-      z-index: 2;
-    }
-
-    :root[data-theme="dark"] .theme-switch .knob {
-      transform: translateX(26px);
-    }
-
-    :root[data-theme="light"] .theme-switch .knob {
-      transform: translateX(0px);
-    }
-
-    /* Split Hero Section */
-    .hero-split {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      align-items: center;
-      gap: 3rem;
-      padding: 5rem 0 4.5rem;
-      position: relative;
-    }
-
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.35rem 0.75rem;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      background: var(--bg-elevated);
-      color: var(--text-secondary);
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero-badge-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--text);
-    }
-
-    .hero-left h1 {
-      font-size: clamp(2.8rem, 5.5vw, 4.5rem);
-      font-weight: 800;
-      line-height: 1.04;
-      letter-spacing: -0.04em;
-      margin-bottom: 1.25rem;
-      color: var(--text);
-    }
-
-    .hero-left h1 .muted-line {
-      display: block;
-      color: var(--text-muted);
-    }
-
-    .hero-sub {
-      font-size: 1.05rem;
-      color: var(--text-secondary);
-      max-width: 480px;
-      line-height: 1.6;
-      margin-bottom: 2.25rem;
-    }
-
-    .download-wrap {
-      display: inline-flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.75rem;
-    }
-
-    /* Primary Professional Button */
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.75rem;
-      padding: 0.9rem 1.6rem;
-      border-radius: 8px;
-      background: var(--primary-bg);
-      color: var(--primary-text);
-      border: 1px solid var(--primary-bg);
-      font-size: 0.95rem;
-      font-weight: 600;
-      letter-spacing: -0.01em;
-      text-decoration: none;
-      cursor: pointer;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
-      transition: background-color 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
-    }
-
-    .btn-primary:hover {
-      background: var(--primary-hover);
-      border-color: var(--primary-hover);
-    }
-
-    .btn-primary:active {
-      transform: translateY(1px);
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-    }
-
-    .btn-primary:focus-visible {
-      outline: 2px solid var(--border-strong);
-      outline-offset: 3px;
-    }
-
-    .btn-primary .btn-tag {
-      font-size: 0.7rem;
-      font-weight: 700;
-      padding: 0.18rem 0.45rem;
-      border-radius: 4px;
-      background: rgba(128, 128, 128, 0.2);
-      color: inherit;
-      letter-spacing: 0.04em;
-      margin-left: 0.25rem;
-    }
-
-    .dev-caption {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      font-weight: 500;
-    }
-
-    /* Right Phone Mockup — Pure Monochrome Hardware */
-    .hero-right {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .phone-frame {
-      position: relative;
-      z-index: 2;
-      width: 264px;
-      height: 516px;
-      background: #080808;
-      border-radius: 36px;
-      border: 1px solid #2e2e2e;
-      box-shadow: var(--shadow), inset 0 0 0 2px #000000;
-      padding: 14px 16px 16px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      color: #ffffff;
-      user-select: none;
-    }
-
-    .phone-statusbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 0.65rem;
-      font-weight: 600;
-      color: #8c8c8c;
-      padding: 2px 6px 8px;
-      font-variant-numeric: tabular-nums;
-    }
-
-    .dynamic-island {
-      width: 62px;
-      height: 14px;
-      background: #000000;
-      border: 1px solid #1f1f1f;
-      border-radius: 999px;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      padding-right: 6px;
-    }
-
-    .island-dot {
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: #ffffff;
-      opacity: 0.15;
-      transition: opacity 0.2s ease;
-    }
-
-    .phone-frame.playing .island-dot {
-      opacity: 1;
-      box-shadow: 0 0 6px #ffffff;
-    }
-
-    .phone-topbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.7rem;
-      color: #737373;
-      padding: 0 2px;
-    }
-
-    /* Album Art Frame */
-    .phone-art {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      background: #111111;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 6px 0;
-      border: 1px solid #222222;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .album-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.35s ease;
-    }
-
-    .phone-frame.playing .album-img {
-      transform: scale(1.04);
-    }
-
-    .phone-track-info {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 4px;
-    }
-
-    .phone-track-title {
-      font-size: 0.92rem;
-      font-weight: 700;
-      color: #ffffff;
-      letter-spacing: -0.01em;
-    }
-
-    .phone-track-artist {
-      font-size: 0.72rem;
-      color: #737373;
-      margin-top: 2px;
-      font-weight: 500;
-    }
-
-    .phone-progress {
-      margin: 12px 0 6px;
-    }
-
-    .progress-bar {
-      width: 100%;
-      height: 5px;
-      background: #222222;
-      border-radius: 99px;
-      position: relative;
-      cursor: pointer;
-    }
-
-    .progress-fill {
-      width: 0%;
-      height: 100%;
-      background: #ffffff;
-      border-radius: 99px;
-      position: relative;
-      transition: width 0.1s linear;
-    }
-
-    .progress-fill::after {
-      content: '';
-      position: absolute;
-      right: -4px;
-      top: -2px;
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: #ffffff;
-    }
-
-    .progress-times {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.62rem;
-      color: #666666;
-      margin-top: 6px;
-      font-variant-numeric: tabular-nums;
-    }
-
-    /* Tactile Player Controls */
-    .phone-controls {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 6px 0;
-    }
-
-    .icon-subtle {
-      color: #525252;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .ctrl-btn {
-      width: 34px;
-      height: 34px;
-      border-radius: 6px;
-      background: #141414;
-      border: 1px solid #242424;
-      color: #d4d4d4;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.1s ease;
-    }
-
-    .ctrl-btn:hover {
-      background: #1f1f1f;
-      border-color: #3d3d3d;
-      color: #ffffff;
-    }
-
-    .ctrl-btn:active {
-      transform: translateY(1px);
-      background: #0f0f0f;
-    }
-
-    .play-circle {
-      width: 44px;
-      height: 44px;
-      border-radius: 8px;
-      background: #ffffff;
-      color: #000000;
-      border: 1px solid #ffffff;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: background-color 0.15s ease, transform 0.1s ease;
-    }
-
-    .play-circle:hover {
-      background: #e5e5e5;
-    }
-
-    .play-circle:active {
-      transform: translateY(1px);
-      background: #cccccc;
-    }
-
-    .phone-bottom-row {
-      display: flex;
-      justify-content: space-between;
-      color: #525252;
-      padding: 6px 4px 0;
-    }
-
-    .home-indicator {
-      width: 68px;
-      height: 3px;
-      background: #333333;
-      border-radius: 99px;
-      margin: 10px auto 0;
-    }
-
-    /* Feature Grid Cards */
-    .highlight-cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem;
-      margin: 1rem 0 4rem;
-    }
-
-    .h-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 1.6rem;
-      transition: border-color 0.15s ease;
-    }
-
-    .h-card:hover {
-      border-color: var(--border-hover);
-    }
-
-    .h-card h3 {
-      font-size: 1.05rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      letter-spacing: -0.02em;
-      color: var(--text);
-    }
-
-    .h-card p {
-      font-size: 0.875rem;
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
-
-    .more-features {
-      padding: 1rem 0 3rem;
-      border-top: 1px solid var(--border);
-    }
-
-    .section-header {
-      margin: 2.5rem 0 2rem;
-    }
-
-    .section-title {
-      font-size: 1.6rem;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      margin-bottom: 0.4rem;
-    }
-
-    .section-sub {
-      color: var(--text-secondary);
-      font-size: 0.92rem;
-    }
-
-    /* Support & Developer Bar */
-    .support-bar {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 1.75rem 2rem;
-      margin-bottom: 4rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .support-info h3 {
-      font-size: 1.15rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.25rem;
-    }
-
-    .support-info p {
-      color: var(--text-secondary);
-      font-size: 0.875rem;
-    }
-
-    .support-actions {
-      display: flex;
-      gap: 0.65rem;
-      flex-wrap: wrap;
-    }
-
-    /* Secondary Engineered Utility Buttons */
-    .chip-btn {
-      background: var(--bg-btn);
-      border: 1px solid var(--border);
-      box-shadow: var(--btn-shadow);
-      color: var(--text);
-      padding: 0.6rem 0.95rem;
-      border-radius: 7px;
-      font-family: inherit;
-      font-size: 0.82rem;
-      font-weight: 600;
-      letter-spacing: -0.01em;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.55rem;
-      transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
-    }
-
-    .chip-btn:hover {
-      background: var(--bg-btn-hover);
-      border-color: var(--border-hover);
-    }
-
-    .chip-btn:active {
-      background: var(--bg-btn-active);
-      transform: translateY(1px);
-    }
-
-    .chip-btn:focus-visible {
-      outline: 2px solid var(--border-strong);
-      outline-offset: 2px;
-    }
-
-    .chip-btn svg {
-      width: 14px;
-      height: 14px;
-      color: var(--text-secondary);
-      flex-shrink: 0;
-      transition: color 0.15s ease;
-    }
-
-    .chip-btn:hover svg {
-      color: var(--text);
-    }
-
-    .chip-action-hint {
-      color: var(--text-muted);
-      font-size: 0.72rem;
-      font-weight: 500;
-      padding-left: 0.35rem;
-      border-left: 1px solid var(--border);
-      margin-left: 0.15rem;
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 2rem 0 3rem;
-      color: var(--text-muted);
-      font-size: 0.84rem;
-      border-top: 1px solid var(--border);
-    }
-
-    footer strong {
-      color: var(--text);
-      font-weight: 600;
-    }
-
-    /* Monochrome Toast */
-    .toast {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      background: var(--primary-bg);
-      color: var(--primary-text);
-      border: 1px solid var(--border);
-      padding: 0.75rem 1.1rem;
-      border-radius: 8px;
-      font-size: 0.84rem;
-      font-weight: 600;
-      box-shadow: var(--shadow);
-      opacity: 0;
-      transform: translateY(12px);
-      pointer-events: none;
-      transition: all 0.2s ease;
-      z-index: 9999;
-    }
-
-    .toast.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @media (max-width: 860px) {
-      .hero-split {
-        grid-template-columns: 1fr;
-        text-align: center;
-        padding: 3rem 0;
-      }
-      .hero-sub {
-        margin-left: auto;
-        margin-right: auto;
-      }
-      .download-wrap {
-        align-items: center;
-      }
-      .highlight-cards {
-        grid-template-columns: 1fr;
-      }
-      .support-bar {
-        flex-direction: column;
-        text-align: center;
-        justify-content: center;
-      }
-      .support-actions {
-        justify-content: center;
-      }
-    }
-  </style>
+<style>
+:root[data-theme="dark"]{--bg:#000;--bg-elevated:#0a0a0a;--bg-card:#0d0d0d;--bg-btn:#141414;--bg-btn-hover:#1f1f1f;--bg-btn-active:#0f0f0f;--text:#fff;--text-secondary:#a3a3a3;--text-muted:#666;--border:#222;--border-hover:#404040;--border-strong:#fff;--primary-bg:#fff;--primary-text:#000;--primary-hover:#e5e5e5;--shadow:0 20px 50px rgba(0,0,0,.9);--btn-shadow:0 1px 2px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.07)}
+:root[data-theme="light"]{--bg:#fff;--bg-elevated:#fafafa;--bg-card:#f7f7f7;--bg-btn:#fff;--bg-btn-hover:#f2f2f2;--bg-btn-active:#e6e6e6;--text:#000;--text-secondary:#4d4d4d;--text-muted:#808080;--border:#e5e5e5;--border-hover:#b3b3b3;--border-strong:#000;--primary-bg:#000;--primary-text:#fff;--primary-hover:#262626;--shadow:0 20px 40px rgba(0,0,0,.06);--btn-shadow:0 1px 2px rgba(0,0,0,.06),inset 0 1px 0 #fff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background-color:var(--bg);color:var(--text);transition:background-color .2s ease,color .2s ease;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+body{min-height:100vh;overflow-x:hidden;position:relative}
+.container{max-width:1120px;margin:0 auto;padding:0 2rem}
+header{padding:1.5rem 0;border-bottom:1px solid var(--border);position:relative;z-index:50}
+.nav-bar{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:.75rem;text-decoration:none;color:var(--text)}
+.logo-circle{width:38px;height:38px;border-radius:8px;display:flex;align-items:center;justify-content:center;background:var(--bg-btn);border:1px solid var(--border);overflow:hidden}
+.logo-circle img{width:100%;height:100%;object-fit:cover;filter:grayscale(100%) contrast(1.1)}
+.brand-title{font-size:1.15rem;font-weight:800;letter-spacing:.14em;color:var(--text)}
+.nav-right,.nav-links{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.nav-links a{text-decoration:none;color:var(--text-secondary);font-size:.875rem;font-weight:500;transition:color .15s ease}
+.nav-links a:hover{color:var(--text)}
+.theme-switch{width:56px;height:30px;border-radius:6px;background:var(--bg-btn);border:1px solid var(--border);box-shadow:var(--btn-shadow);position:relative;cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:0 7px;color:var(--text-muted);transition:border-color .15s ease,background-color .15s ease;outline:none}
+.theme-switch:hover{border-color:var(--border-hover);color:var(--text)}
+.theme-switch:focus-visible{outline:2px solid var(--border-strong);outline-offset:2px}
+.theme-switch svg{width:13px;height:13px;z-index:1;pointer-events:none}
+.theme-switch .knob{position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:4px;background:var(--text);transition:transform .2s cubic-bezier(.2,.8,.2,1);z-index:2;opacity:.9}
+:root[data-theme="dark"] .theme-switch .knob{transform:translateX(26px)}
+:root[data-theme="light"] .theme-switch .knob{transform:translateX(0)}
+.hero-split{display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:3rem;padding:5rem 0 4.5rem;position:relative}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;padding:.35rem .75rem;border:1px solid var(--border);border-radius:999px;background:var(--bg-elevated);color:var(--text-secondary);font-size:.75rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin-bottom:1.5rem}
+.hero-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--text)}
+.hero-left h1{font-size:clamp(2.8rem,5.5vw,4.5rem);font-weight:800;line-height:1.04;letter-spacing:-.04em;margin-bottom:1.25rem;color:var(--text)}
+.hero-left h1 .muted-line{display:block;color:var(--text-muted)}
+.hero-sub{font-size:1.05rem;color:var(--text-secondary);max-width:480px;line-height:1.6;margin-bottom:2.25rem}
+.download-wrap{display:inline-flex;flex-direction:column;align-items:flex-start;gap:.75rem}
+.btn-primary{display:inline-flex;align-items:center;justify-content:center;gap:.75rem;padding:.9rem 1.6rem;border-radius:8px;background:var(--primary-bg);color:var(--primary-text);border:1px solid var(--primary-bg);font-size:.95rem;font-weight:600;letter-spacing:-.01em;text-decoration:none;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,.25);transition:background-color .15s ease,transform .1s ease,box-shadow .15s ease}
+.btn-primary:hover{background:var(--primary-hover);border-color:var(--primary-hover)}
+.btn-primary:active{transform:translateY(1px);box-shadow:0 1px 2px rgba(0,0,0,.2)}
+.btn-primary:focus-visible{outline:2px solid var(--border-strong);outline-offset:3px}
+.btn-primary .btn-tag{font-size:.7rem;font-weight:700;padding:.18rem .45rem;border-radius:4px;background:rgba(128,128,128,.2);color:inherit;letter-spacing:.04em;margin-left:.25rem}
+.dev-caption{font-size:.8rem;color:var(--text-muted);font-weight:500}
+.hero-right{position:relative;display:flex;justify-content:center;align-items:center}
+.phone-frame{position:relative;z-index:2;width:264px;height:516px;background:#080808;border-radius:36px;border:1px solid #2e2e2e;box-shadow:var(--shadow),inset 0 0 0 2px #000;padding:14px 16px 16px;display:flex;flex-direction:column;justify-content:space-between;color:#fff;user-select:none}
+.phone-statusbar{display:flex;align-items:center;justify-content:space-between;font-size:.65rem;font-weight:600;color:#8c8c8c;padding:2px 6px 8px;font-variant-numeric:tabular-nums}
+.dynamic-island{width:62px;height:14px;background:#000;border:1px solid #1f1f1f;border-radius:999px;display:flex;align-items:center;justify-content:flex-end;padding-right:6px}
+.island-dot{width:5px;height:5px;border-radius:50%;background:#fff;opacity:.15;transition:opacity .2s ease}
+.phone-frame.playing .island-dot{opacity:1;box-shadow:0 0 6px #fff}
+.phone-topbar{display:flex;justify-content:space-between;align-items:center;font-size:.7rem;color:#737373;padding:0 2px}
+.phone-art{width:100%;aspect-ratio:1/1;background:#111;border-radius:12px;display:flex;align-items:center;justify-content:center;margin:6px 0;border:1px solid #222;position:relative;overflow:hidden}
+.album-img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease}
+.phone-frame.playing .album-img{transform:scale(1.04)}
+.phone-track-info{display:flex;justify-content:space-between;align-items:center;margin-top:4px}
+.phone-track-title{font-size:.92rem;font-weight:700;color:#fff;letter-spacing:-.01em}
+.phone-track-artist{font-size:.72rem;color:#737373;margin-top:2px;font-weight:500}
+.phone-progress{margin:12px 0 6px}
+.progress-bar{width:100%;height:5px;background:#222;border-radius:99px;position:relative;cursor:pointer}
+.progress-fill{width:0%;height:100%;background:#fff;border-radius:99px;position:relative;transition:width .1s linear}
+.progress-fill::after{content:'';position:absolute;right:-4px;top:-2px;width:9px;height:9px;border-radius:50%;background:#fff}
+.progress-times{display:flex;justify-content:space-between;font-size:.62rem;color:#666;margin-top:6px;font-variant-numeric:tabular-nums}
+.phone-controls{display:flex;align-items:center;justify-content:space-between;padding:6px 0}
+.icon-subtle{color:#525252;display:inline-flex;align-items:center;justify-content:center}
+.ctrl-btn{width:34px;height:34px;border-radius:6px;background:#141414;border:1px solid #242424;color:#d4d4d4;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:background-color .15s ease,border-color .15s ease,color .15s ease,transform .1s ease}
+.ctrl-btn:hover{background:#1f1f1f;border-color:#3d3d3d;color:#fff}
+.ctrl-btn:active{transform:translateY(1px);background:#0f0f0f}
+.play-circle{width:44px;height:44px;border-radius:8px;background:#fff;color:#000;border:1px solid #fff;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:background-color .15s ease,transform .1s ease}
+.play-circle:hover{background:#e5e5e5}
+.play-circle:active{transform:translateY(1px);background:#ccc}
+.phone-bottom-row{display:flex;justify-content:space-between;color:#525252;padding:6px 4px 0}
+.home-indicator{width:68px;height:3px;background:#333;border-radius:99px;margin:10px auto 0}
+.highlight-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin:1rem 0 4rem}
+.h-card{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:1.6rem;transition:border-color .15s ease}
+.h-card:hover{border-color:var(--border-hover)}
+.h-card h3{font-size:1.05rem;font-weight:700;margin-bottom:.5rem;letter-spacing:-.02em;color:var(--text)}
+.h-card p{font-size:.875rem;color:var(--text-secondary);line-height:1.6}
+.more-features{padding:1rem 0 3rem;border-top:1px solid var(--border)}
+.section-header{margin:2.5rem 0 2rem}
+.section-title{font-size:1.6rem;font-weight:800;letter-spacing:-.03em;margin-bottom:.4rem}
+.section-sub{color:var(--text-secondary);font-size:.92rem}
+.support-bar{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:1.75rem 2rem;margin-bottom:4rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
+.support-info h3{font-size:1.15rem;font-weight:700;letter-spacing:-.02em;margin-bottom:.25rem}
+.support-info p{color:var(--text-secondary);font-size:.875rem}
+.support-actions{display:flex;gap:.65rem;flex-wrap:wrap}
+.chip-btn{background:var(--bg-btn);border:1px solid var(--border);box-shadow:var(--btn-shadow);color:var(--text);padding:.6rem .95rem;border-radius:7px;font-family:inherit;font-size:.82rem;font-weight:600;letter-spacing:-.01em;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:.55rem;transition:background-color .15s ease,border-color .15s ease,transform .1s ease}
+.chip-btn:hover{background:var(--bg-btn-hover);border-color:var(--border-hover)}
+.chip-btn:active{background:var(--bg-btn-active);transform:translateY(1px)}
+.chip-btn:focus-visible{outline:2px solid var(--border-strong);outline-offset:2px}
+.chip-btn svg{width:14px;height:14px;color:var(--text-secondary);flex-shrink:0;transition:color .15s ease}
+.chip-btn:hover svg{color:var(--text)}
+.chip-action-hint{color:var(--text-muted);font-size:.72rem;font-weight:500;padding-left:.35rem;border-left:1px solid var(--border);margin-left:.15rem}
+footer{text-align:center;padding:2rem 0 3rem;color:var(--text-muted);font-size:.84rem;border-top:1px solid var(--border)}
+footer strong{color:var(--text);font-weight:600}
+.toast{position:fixed;bottom:24px;right:24px;background:var(--primary-bg);color:var(--primary-text);border:1px solid var(--border);padding:.75rem 1.1rem;border-radius:8px;font-size:.84rem;font-weight:600;box-shadow:var(--shadow);opacity:0;transform:translateY(12px);pointer-events:none;transition:all .2s ease;z-index:9999}
+.toast.show{opacity:1;transform:translateY(0)}
+@media (max-width:860px){
+.hero-split{grid-template-columns:1fr;text-align:center;padding:3rem 0}
+.hero-sub{margin-left:auto;margin-right:auto}
+.download-wrap{align-items:center}
+.highlight-cards{grid-template-columns:1fr}
+.support-bar{flex-direction:column;text-align:center;justify-content:center}
+.support-actions{justify-content:center}
+}
+</style>
 </head>
 <body>
-
-  <div class="container">
-    <!-- Top Header -->
-    <header>
-      <div class="nav-bar">
-        <a href="/" class="brand">
-          <div class="logo-circle">
-            <img src="ravio_logo.png" alt="Ravio Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
-            <svg style="display:none;" width="22" height="22" viewBox="0 0 100 100" fill="none">
-              <circle cx="50" cy="50" r="44" stroke="currentColor" stroke-width="6"/>
-              <path d="M34 32H52C60 32 65 37 65 44C65 50 60 54 53 55L66 72H56L44 55H38V72H31V32H34Z" fill="currentColor"/>
-            </svg>
-          </div>
-          <span class="brand-title">RAVIO</span>
-        </a>
-
-        <div class="nav-right">
-          <nav class="nav-links">
-            <a href="#download">Download</a>
-            <a href="/privacy">Privacy Policy</a>
-            <a href="/terms">Terms of Service</a>
-            <a href="#support">Support</a>
-            <a href="https://ramanchapagain.github.io" target="_blank" rel="noopener">Dev Website</a>
-          </nav>
-
-          <!-- Monochrome SVG Theme Switch -->
-          <button class="theme-switch" id="themeSwitch" type="button" aria-label="Toggle Light and Dark Mode">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="5"/>
-              <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
-            </svg>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-            </svg>
-            <span class="knob"></span>
-          </button>
-        </div>
-      </div>
-    </header>
-
-    <!-- Main Hero Split Section -->
-    <section class="hero-split" id="download">
-      <div class="hero-left">
-        <div class="hero-badge">
-          <span class="hero-badge-dot"></span>
-          Android Client • Ad-Free
-        </div>
-
-        <h1>
-          Pure Music.
-          <span class="muted-line">Zero Limits.</span>
-        </h1>
-
-        <p class="hero-sub">
-          A high-precision, zero-telemetry music streaming client equipped with Ravio Brain AI, Dual 10-Band DSP Equalizer, and time-synced lyrics.
-        </p>
-
-        <div class="download-wrap">
-          <a href="https://github.com/raviomusic/raviomusic.github.io/releases/latest/download/Ravio.apk" class="btn-primary">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-              <polyline points="7 10 12 15 17 10"/>
-              <line x1="12" y1="15" x2="12" y2="3"/>
-            </svg>
-            Download APK
-            <span class="btn-tag">LATEST</span>
-          </a>
-          <span class="dev-caption">Developed by Raman Chapagain</span>
-        </div>
-      </div>
-
-      <!-- Right Side Interactive Phone Mockup -->
-      <div class="hero-right">
-        <div class="phone-frame" id="phonePlayer">
-          <div>
-            <div class="phone-statusbar">
-              <span>9:41</span>
-              <div class="dynamic-island">
-                <span class="island-dot"></span>
-              </div>
-              <span>5G 100%</span>
-            </div>
-            <div class="phone-topbar">
-              <span>⌄</span>
-              <span style="font-size:0.6rem; letter-spacing:0.12em; text-transform:uppercase; font-weight:600;">Now Playing</span>
-              <span>⋮</span>
-            </div>
-          </div>
-
-          <div class="phone-art">
-            <img
-              id="albumArtImg"
-              class="album-img"
-              src="https://i.ytimg.com/vi/83RUhxsfLWs/maxresdefault.jpg"
-              onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/83RUhxsfLWs/hqdefault.jpg';"
-              alt="NEFFEX - Grateful Album Cover"
-            />
-          </div>
-
-          <div>
-            <div class="phone-track-info">
-              <div>
-                <div class="phone-track-title">Grateful</div>
-                <div class="phone-track-artist">NEFFEX</div>
-              </div>
-              <div style="color:#ffffff; font-size:0.82rem;">♥ &nbsp;<span style="color:#666666;">⋯</span></div>
-            </div>
-
-            <div class="phone-progress">
-              <div class="progress-bar" id="progressBar" title="Click to seek">
-                <div class="progress-fill" id="progressFill"></div>
-              </div>
-              <div class="progress-times">
-                <span id="currentTime">0:00</span>
-                <span id="totalTime">3:02</span>
-              </div>
-            </div>
-
-            <div class="phone-controls">
-              <span class="icon-subtle" title="Shuffle">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/>
-                  <polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/>
-                  <line x1="4" y1="4" x2="9" y2="9"/>
-                </svg>
-              </span>
-
-              <button class="ctrl-btn" id="restartBtn" type="button" title="Restart from 0:00" aria-label="Restart track from beginning">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/>
-                </svg>
-              </button>
-
-              <button class="play-circle" id="playPauseBtn" type="button" aria-label="Play or Pause NEFFEX Grateful" title="Play NEFFEX - Grateful from start">
-                <svg id="playIcon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M8 5v14l11-7z"/>
-                </svg>
-                <svg id="pauseIcon" style="display:none;" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
-                </svg>
-              </button>
-
-              <button class="ctrl-btn" id="skipBtn" type="button" title="Skip forward 15s" aria-label="Skip forward 15 seconds">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/>
-                </svg>
-              </button>
-
-              <span class="icon-subtle" title="Repeat">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/>
-                  <polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/>
-                </svg>
-              </span>
-            </div>
-
-            <div class="phone-bottom-row">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
-                <path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/>
-              </svg>
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="2" y="7" width="20" height="15" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/>
-              </svg>
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/>
-              </svg>
-            </div>
-            <div class="home-indicator"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Primary 3 Feature Cards -->
-    <section class="highlight-cards">
-      <div class="h-card">
-        <h3>Ravio Brain AI</h3>
-        <p>Built-in AI music curator that creates custom taste mixes, Vibe Summaries, Song DNA backstories, and instant live lyrics translations.</p>
-      </div>
-
-      <div class="h-card">
-        <h3>Dual 10-Band EQ</h3>
-        <p>Studio-grade multi-band equalizer with DSP bass boost, loudness enhancer, 3D virtualizer, pitch/tempo shift, and silence skipping.</p>
-      </div>
-
-      <div class="h-card">
-        <h3>Unlocked Streaming</h3>
-        <p>100% free, ad-free background playback with offline song caching, time-synced lyrics, Ravio Find recognition, and AMOLED customization.</p>
-      </div>
-    </section>
-
-    <!-- Additional Features Grid -->
-    <section class="more-features">
-      <div class="section-header">
-        <h2 class="section-title">Fully Customizable. Built for Audiophiles.</h2>
-        <p class="section-sub">Every feature you need packed into a lightweight, modern Material 3 client.</p>
-      </div>
-
-      <div class="highlight-cards">
-        <div class="h-card">
-          <h3>Material You & AMOLED</h3>
-          <p>Dynamic wallpaper theming, Pure Black mode, custom grid layouts, blurred album art backdrops, and sleek player animations.</p>
-        </div>
-
-        <div class="h-card">
-          <h3>Time-Synced Lyrics</h3>
-          <p>Sing along with word-by-word and line-synced lyrics, expressive canvas visuals, and one-tap AI language translations.</p>
-        </div>
-
-        <div class="h-card">
-          <h3>Offline & Android Auto</h3>
-          <p>Download songs for offline playback, play local device audio files, cast to speakers, or control your queue from Android Auto.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Support the App & Developer Section -->
-    <section class="support-bar" id="support">
-      <div class="support-info">
-        <h3>Support Ravio</h3>
-        <p>Created by <strong>Raman Chapagain</strong>. Copy support details or visit the developer portal.</p>
-      </div>
-
-      <div class="support-actions">
-        <button class="chip-btn" type="button" onclick="copySupport('9846620752', 'eSewa number')">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
-            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+<div class="container">
+  <header>
+    <div class="nav-bar">
+      <a href="./" class="brand">
+        <div class="logo-circle">
+          <img src="ravio_logo.png" alt="Ravio Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+          <svg style="display:none;" width="22" height="22" viewBox="0 0 100 100" fill="none">
+            <circle cx="50" cy="50" r="44" stroke="currentColor" stroke-width="6"/>
+            <path d="M34 32H52C60 32 65 37 65 44C65 50 60 54 53 55L66 72H56L44 55H38V72H31V32H34Z" fill="currentColor"/>
           </svg>
-          eSewa
-          <span class="chip-action-hint">Copy</span>
+        </div>
+        <span class="brand-title">RAVIO</span>
+      </a>
+      <div class="nav-right">
+        <nav class="nav-links">
+          <a href="#download">Download</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="#support">Support</a>
+          <a href="https://ramanchapagain.github.io" target="_blank" rel="noopener">Dev Website</a>
+        </nav>
+        <button class="theme-switch" id="themeSwitch" type="button" aria-label="Toggle Light and Dark Mode">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"/>
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+          </svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+          <span class="knob"></span>
         </button>
-
-        <button class="chip-btn" type="button" onclick="copySupport('ltc1quwyt9xhc262szelwt44mdkwdcjzawqusrjp4vd', 'Litecoin (LTC) address')">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
-            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
-          </svg>
-          Litecoin (LTC)
-          <span class="chip-action-hint">Copy</span>
-        </button>
-
-        <a href="https://ramanchapagain.github.io" target="_blank" rel="noopener" class="chip-btn">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-            <polyline points="15 3 21 3 21 9"/>
-            <line x1="10" y1="14" x2="21" y2="3"/>
-          </svg>
-          Developer Website
-        </a>
       </div>
-    </section>
+    </div>
+  </header>
 
-    <!-- Footer -->
-    <footer>
-      Developed by <strong>Raman Chapagain</strong> • © <span id="year"></span> Ravio Music. All rights reserved.
-    </footer>
-  </div>
+  <section class="hero-split" id="download">
+    <div class="hero-left">
+      <div class="hero-badge"><span class="hero-badge-dot"></span>Android Client • Ad-Free</div>
+      <h1>Pure Music.<span class="muted-line">Zero Limits.</span></h1>
+      <p class="hero-sub">A high-precision, zero-telemetry music streaming client equipped with Ravio Brain AI, Dual 10-Band DSP Equalizer, and time-synced lyrics.</p>
+      <div class="download-wrap">
+        <a href="https://github.com/raviomusic/raviomusic.github.io/releases/latest/download/Ravio.apk" class="btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          Download APK
+          <span class="btn-tag">LATEST</span>
+        </a>
+        <span class="dev-caption">Developed by Raman Chapagain</span>
+      </div>
+    </div>
 
-  <!-- Full-Track Audio Element -->
-  <audio id="neffexAudio" preload="auto"></audio>
+    <div class="hero-right">
+      <div class="phone-frame" id="phonePlayer">
+        <div>
+          <div class="phone-statusbar">
+            <span>9:41</span>
+            <div class="dynamic-island"><span class="island-dot"></span></div>
+            <span>5G 100%</span>
+          </div>
+          <div class="phone-topbar">
+            <span>⌄</span>
+            <span style="font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;">Now Playing</span>
+            <span>⋮</span>
+          </div>
+        </div>
 
-  <div class="toast" id="toast">Copied to clipboard</div>
+        <div class="phone-art">
+          <img id="albumArtImg" class="album-img" src="https://i.ytimg.com/vi/83RUhxsfLWs/maxresdefault.jpg" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/83RUhxsfLWs/hqdefault.jpg';" alt="NEFFEX - Grateful Album Cover" />
+        </div>
 
-  <script>
-    // 1. Light / Dark Theme Toggle
-    const root = document.documentElement;
-    const themeSwitch = document.getElementById('themeSwitch');
-    const toast = document.getElementById('toast');
-    document.getElementById('year').textContent = new Date().getFullYear();
+        <div>
+          <div class="phone-track-info">
+            <div>
+              <div class="phone-track-title">Grateful</div>
+              <div class="phone-track-artist">NEFFEX</div>
+            </div>
+            <div style="color:#fff;font-size:.82rem;">♥ &nbsp;<span style="color:#666;">⋯</span></div>
+          </div>
 
-    const savedTheme = localStorage.getItem('ravio-theme') || 'dark';
-    root.setAttribute('data-theme', savedTheme);
+          <div class="phone-progress">
+            <div class="progress-bar" id="progressBar" title="Click to seek"><div class="progress-fill" id="progressFill"></div></div>
+            <div class="progress-times"><span id="currentTime">0:00</span><span id="totalTime">3:02</span></div>
+          </div>
 
-    themeSwitch.addEventListener('click', () => {
-      const current = root.getAttribute('data-theme');
-      const next = current === 'dark' ? 'light' : 'dark';
-      root.setAttribute('data-theme', next);
-      localStorage.setItem('ravio-theme', next);
+          <div class="phone-controls">
+            <span class="icon-subtle" title="Shuffle">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>
+            </span>
+            <button class="ctrl-btn" id="restartBtn" type="button" title="Restart from 0:00" aria-label="Restart track from beginning">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+            </button>
+            <button class="play-circle" id="playPauseBtn" type="button" aria-label="Play or Pause NEFFEX Grateful" title="Play">
+              <svg id="playIcon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              <svg id="pauseIcon" style="display:none;" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+            </button>
+            <button class="ctrl-btn" id="skipBtn" type="button" title="Skip forward 15s" aria-label="Skip forward 15 seconds">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
+            </button>
+            <span class="icon-subtle" title="Repeat">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+            </span>
+          </div>
+
+          <div class="phone-bottom-row">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/></svg>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="15" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/></svg>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </div>
+          <div class="home-indicator"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="highlight-cards">
+    <div class="h-card"><h3>Ravio Brain AI</h3><p>Built-in AI music curator that creates custom taste mixes, Vibe Summaries, Song DNA backstories, and instant live lyrics translations.</p></div>
+    <div class="h-card"><h3>Dual 10-Band EQ</h3><p>Studio-grade multi-band equalizer with DSP bass boost, loudness enhancer, 3D virtualizer, pitch/tempo shift, and silence skipping.</p></div>
+    <div class="h-card"><h3>Unlocked Streaming</h3><p>100% free, ad-free background playback with offline song caching, time-synced lyrics, Ravio Find recognition, and AMOLED customization.</p></div>
+  </section>
+
+  <section class="more-features">
+    <div class="section-header">
+      <h2 class="section-title">Fully Customizable. Built for Audiophiles.</h2>
+      <p class="section-sub">Every feature you need packed into a lightweight, modern Material 3 client.</p>
+    </div>
+    <div class="highlight-cards">
+      <div class="h-card"><h3>Material You &amp; AMOLED</h3><p>Dynamic wallpaper theming, Pure Black mode, custom grid layouts, blurred album art backdrops, and sleek player animations.</p></div>
+      <div class="h-card"><h3>Time-Synced Lyrics</h3><p>Sing along with word-by-word and line-synced lyrics, expressive canvas visuals, and one-tap AI language translations.</p></div>
+      <div class="h-card"><h3>Offline &amp; Android Auto</h3><p>Download songs for offline playback, play local device audio files, cast to speakers, or control your queue from Android Auto.</p></div>
+    </div>
+  </section>
+
+  <section class="support-bar" id="support">
+    <div class="support-info">
+      <h3>Support Ravio</h3>
+      <p>Created by <strong>Raman Chapagain</strong>. Copy support details or visit the developer portal.</p>
+    </div>
+    <div class="support-actions">
+      <button class="chip-btn" type="button" onclick="copySupport('9846620752', 'eSewa number')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        eSewa <span class="chip-action-hint">Copy</span>
+      </button>
+      <button class="chip-btn" type="button" onclick="copySupport('ltc1quwyt9xhc262szelwt44mdkwdcjzawqusrjp4vd', 'Litecoin (LTC) address')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        Litecoin (LTC) <span class="chip-action-hint">Copy</span>
+      </button>
+      <a href="https://ramanchapagain.github.io" target="_blank" rel="noopener" class="chip-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        Developer Website
+      </a>
+    </div>
+  </section>
+
+  <footer>Developed by <strong>Raman Chapagain</strong> • © <span id="year"></span> Ravio Music. All rights reserved.</footer>
+</div>
+
+<audio id="neffexAudio" preload="none"></audio>
+<div class="toast" id="toast" role="status" aria-live="polite">Copied to clipboard</div>
+
+<script>
+(function () {
+  'use strict';
+  var $ = function (id) { return document.getElementById(id); };
+  var root = document.documentElement;
+  var toast = $('toast');
+  $('year').textContent = new Date().getFullYear();
+
+  // Theme toggle (storage access is guarded)
+  $('themeSwitch').addEventListener('click', function () {
+    var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('ravio-theme', next); } catch (e) {}
+  });
+
+  // Toast + clipboard
+  var toastTimer;
+  function showToast(msg) {
+    clearTimeout(toastTimer);
+    toast.textContent = msg;
+    toast.classList.add('show');
+    toastTimer = setTimeout(function () { toast.classList.remove('show'); }, 2400);
+  }
+  function fallbackCopy(value, label) {
+    var t = document.createElement('textarea');
+    t.value = value; t.style.position = 'fixed'; t.style.opacity = '0';
+    document.body.appendChild(t); t.focus(); t.select();
+    try { document.execCommand('copy'); showToast(label + ' copied to clipboard'); }
+    catch (e) { showToast('Copy: ' + value); }
+    document.body.removeChild(t);
+  }
+  window.copySupport = function (value, label) {
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(value)
+        .then(function () { showToast(label + ' copied to clipboard'); })
+        .catch(function () { fallbackCopy(value, label); });
+    } else { fallbackCopy(value, label); }
+  };
+
+  // Player
+  var audio = $('neffexAudio');
+  var albumArtImg = $('albumArtImg');
+  var playPauseBtn = $('playPauseBtn');
+  var playIcon = $('playIcon');
+  var pauseIcon = $('pauseIcon');
+  var phonePlayer = $('phonePlayer');
+  var progressFill = $('progressFill');
+  var progressBar = $('progressBar');
+  var currentTimeEl = $('currentTime');
+  var totalTimeEl = $('totalTime');
+  var FALLBACK_DURATION = 182;
+
+  // Album art from iTunes (cosmetic only; failure keeps the default image)
+  window.handleItunesCover = function (data) {
+    if (!data || !data.results || !data.results.length) return;
+    var track = data.results.find(function (t) {
+      return t.artistName && /neffex/i.test(t.artistName) && t.trackName && /grateful/i.test(t.trackName);
     });
-
-    // 2. Clipboard Copy Function
-    let toastTimer;
-    function showToast(message) {
-      clearTimeout(toastTimer);
-      toast.textContent = message;
-      toast.classList.add('show');
-      toastTimer = setTimeout(() => toast.classList.remove('show'), 2400);
+    if (track && track.artworkUrl100) {
+      albumArtImg.src = track.artworkUrl100.replace('100x100bb', '600x600bb');
     }
+  };
+  (function () {
+    var api = 'https://itunes.apple.com/search?term=NEFFEX+Grateful&entity=song&limit=5';
+    fetch(api).then(function (r) { return r.json(); }).then(window.handleItunesCover)
+      .catch(function () {
+        var s = document.createElement('script');
+        s.src = api + '&callback=handleItunesCover';
+        s.onerror = function () {};
+        document.body.appendChild(s);
+      });
+  })();
 
-    function copySupport(value, label) {
-      if (navigator.clipboard && window.isSecureContext) {
-        navigator.clipboard.writeText(value).then(() => {
-          showToast(`${label} copied to clipboard`);
-        }).catch(() => fallbackCopy(value, label));
-      } else {
-        fallbackCopy(value, label);
-      }
+  // Resolve the stream lazily on first Play (no network use for visitors who never click)
+  var resolving = null;
+  function resolveStream() {
+    if (audio.src) return Promise.resolve(audio.src);
+    if (resolving) return resolving;
+    resolving = fetch('https://api.audius.co/v1/tracks/search?query=' + encodeURIComponent('NEFFEX Grateful') + '&app_name=RavioMusic')
+      .then(function (r) { if (!r.ok) throw new Error('search failed'); return r.json(); })
+      .then(function (json) {
+        var list = Array.isArray(json.data) ? json.data : [];
+        var match =
+          list.find(function (t) {
+            return /grateful/i.test(t.title || '') && !/nightcore|slowed/i.test(t.title) && t.duration >= 175 && t.duration <= 195;
+          }) ||
+          list.find(function (t) { return /grateful/i.test(t.title || ''); });
+        if (!match) throw new Error('no match');
+        audio.src = 'https://api.audius.co/v1/tracks/' + match.id + '/stream?app_name=RavioMusic';
+        return audio.src;
+      })
+      .catch(function () { resolving = null; return null; });
+    return resolving;
+  }
+
+  function formatTime(sec) {
+    if (!isFinite(sec) || sec < 0) return '0:00';
+    var m = Math.floor(sec / 60), s = Math.floor(sec % 60);
+    return m + ':' + (s < 10 ? '0' : '') + s;
+  }
+  function updatePlayUI(isPlaying) {
+    playIcon.style.display = isPlaying ? 'none' : 'block';
+    pauseIcon.style.display = isPlaying ? 'block' : 'none';
+    phonePlayer.classList.toggle('playing', isPlaying);
+  }
+  function getDuration() {
+    return (audio.duration && isFinite(audio.duration)) ? audio.duration : FALLBACK_DURATION;
+  }
+
+  playPauseBtn.addEventListener('click', function () {
+    if (!audio.src) {
+      showToast('Loading track...');
+      resolveStream().then(function (src) {
+        if (!src) { showToast('Preview unavailable right now'); return; }
+        audio.play().then(function () { updatePlayUI(true); })
+          .catch(function () { showToast('Could not play preview'); });
+      });
+      return;
     }
-
-    function fallbackCopy(value, label) {
-      const tempInput = document.createElement('textarea');
-      tempInput.value = value;
-      tempInput.style.position = 'fixed';
-      tempInput.style.opacity = '0';
-      document.body.appendChild(tempInput);
-      tempInput.focus();
-      tempInput.select();
-      try {
-        document.execCommand('copy');
-        showToast(`${label} copied to clipboard`);
-      } catch (e) {
-        showToast(`Copy: ${value}`);
-      }
-      document.body.removeChild(tempInput);
-    }
-
-    // 3. Full-Track NEFFEX - Grateful (Starts at 0:00, Full 3:02 Song)
-    const audio = document.getElementById('neffexAudio');
-    const albumArtImg = document.getElementById('albumArtImg');
-    const playPauseBtn = document.getElementById('playPauseBtn');
-    const playIcon = document.getElementById('playIcon');
-    const pauseIcon = document.getElementById('pauseIcon');
-    const phonePlayer = document.getElementById('phonePlayer');
-    const progressFill = document.getElementById('progressFill');
-    const progressBar = document.getElementById('progressBar');
-    const currentTimeEl = document.getElementById('currentTime');
-    const totalTimeEl = document.getElementById('totalTime');
-    const restartBtn = document.getElementById('restartBtn');
-    const skipBtn = document.getElementById('skipBtn');
-
-    // A) Load Official 600x600 Album Cover Art ONLY (from Apple Music / iTunes)
-    window.handleItunesCover = function(data) {
-      if (!data || !data.results || !data.results.length) return;
-      const track = data.results.find(
-        t => t.artistName && t.artistName.toLowerCase().includes('neffex') &&
-             t.trackName && t.trackName.toLowerCase().includes('grateful')
-      ) || data.results[0];
-
-      if (track && track.artworkUrl100) {
-        albumArtImg.src = track.artworkUrl100.replace('100x100bb', '600x600bb');
-      }
-    };
-
-    (function loadCoverArt() {
-      const coverApi = 'https://itunes.apple.com/search?term=NEFFEX+Grateful&entity=song&limit=5';
-      fetch(coverApi)
-        .then(r => r.json())
-        .then(data => window.handleItunesCover(data))
-        .catch(() => {
-          const s = document.createElement('script');
-          s.src = coverApi + '&callback=handleItunesCover';
-          document.body.appendChild(s);
-        });
-    })();
-
-    // B) Resolve Full 3:02 Track Stream from 0:00 via Audius Public API
-    let streamResolvePromise = null;
-
-    async function resolveFullSongStream() {
-      if (audio.src) return audio.src;
-
-      const hosts = [
-        'https://discoveryprovider.audius.co',
-        'https://discoveryprovider2.audius.co',
-        'https://discoveryprovider3.audius.co'
-      ];
-
-      try {
-        const hostRes = await fetch('https://api.audius.co');
-        const hostData = await hostRes.json();
-        if (hostData && Array.isArray(hostData.data) && hostData.data.length) {
-          hosts.unshift(hostData.data[0]);
-        }
-      } catch (_) {}
-
-      for (const host of hosts) {
-        try {
-          const searchUrl = `${host}/v1/tracks/search?query=${encodeURIComponent('NEFFEX Grateful')}&app_name=RavioMusic`;
-          const res = await fetch(searchUrl);
-          if (!res.ok) continue;
-          const json = await res.json();
-          if (json && Array.isArray(json.data) && json.data.length) {
-            // Find the full ~3:02 (182s) original NEFFEX - Grateful track
-            const match = json.data.find(t =>
-              t.title &&
-              t.title.toLowerCase().includes('grateful') &&
-              !t.title.toLowerCase().includes('nightcore') &&
-              !t.title.toLowerCase().includes('slowed') &&
-              t.duration >= 175 && t.duration <= 195
-            ) || json.data.find(t =>
-              t.title && t.title.toLowerCase().includes('grateful')
-            ) || json.data[0];
-
-            if (match && match.id) {
-              const streamUrl = `${host}/v1/tracks/${match.id}/stream?app_name=RavioMusic`;
-              audio.src = streamUrl;
-              audio.currentTime = 0;
-              return streamUrl;
-            }
-          }
-        } catch (_) {}
-      }
-
-      // Fallback full MP3 stream
-      const archiveFallback = 'https://archive.org/download/neffex-grateful/NEFFEX%20-%20Grateful.mp3';
-      audio.src = archiveFallback;
-      audio.currentTime = 0;
-      return archiveFallback;
-    }
-
-    // Pre-resolve the full track on page load so clicking Play starts at 0:00 immediately
-    streamResolvePromise = resolveFullSongStream();
-
-    function formatTime(sec) {
-      if (!isFinite(sec) || sec < 0) return '0:00';
-      const m = Math.floor(sec / 60);
-      const s = Math.floor(sec % 60);
-      return `${m}:${s < 10 ? '0' : ''}${s}`;
-    }
-
-    function updatePlayUI(isPlaying) {
-      playIcon.style.display = isPlaying ? 'none' : 'block';
-      pauseIcon.style.display = isPlaying ? 'block' : 'none';
-      phonePlayer.classList.toggle('playing', isPlaying);
-    }
-
-    playPauseBtn.addEventListener('click', async () => {
-      if (!audio.src) {
-        showToast('Loading full track from 0:00...');
-        await streamResolvePromise;
-      }
-
-      if (audio.paused) {
-        audio.play().then(() => {
-          updatePlayUI(true);
-        }).catch(() => {
-          showToast('Buffering full track...');
-        });
-      } else {
-        audio.pause();
-        updatePlayUI(false);
-      }
-    });
-
-    restartBtn.addEventListener('click', () => {
-      if (!audio.src) return;
-      audio.currentTime = 0;
-      progressFill.style.width = '0%';
-      currentTimeEl.textContent = '0:00';
-      if (audio.paused) {
-        audio.play().then(() => updatePlayUI(true)).catch(() => {});
-      }
-    });
-
-    skipBtn.addEventListener('click', () => {
-      const duration = audio.duration || 182;
-      audio.currentTime = Math.min(duration, audio.currentTime + 15);
-    });
-
-    audio.addEventListener('loadedmetadata', () => {
-      if (audio.duration && isFinite(audio.duration)) {
-        totalTimeEl.textContent = formatTime(audio.duration);
-      }
-    });
-
-    audio.addEventListener('timeupdate', () => {
-      const duration = (audio.duration && isFinite(audio.duration)) ? audio.duration : 182;
-      const pct = Math.min(100, (audio.currentTime / duration) * 100);
-      progressFill.style.width = `${pct}%`;
-      currentTimeEl.textContent = formatTime(audio.currentTime);
-    });
-
-    audio.addEventListener('ended', () => {
+    if (audio.paused) {
+      audio.play().then(function () { updatePlayUI(true); })
+        .catch(function () { showToast('Could not play preview'); });
+    } else {
+      audio.pause();
       updatePlayUI(false);
-      progressFill.style.width = '0%';
-      currentTimeEl.textContent = '0:00';
-    });
+    }
+  });
 
-    progressBar.addEventListener('click', (e) => {
-      if (!audio.src) return;
-      const rect = progressBar.getBoundingClientRect();
-      const clickRatio = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
-      const duration = (audio.duration && isFinite(audio.duration)) ? audio.duration : 182;
-      audio.currentTime = clickRatio * duration;
-    });
-  </script>
+  $('restartBtn').addEventListener('click', function () {
+    if (!audio.src) return;
+    audio.currentTime = 0;
+    progressFill.style.width = '0%';
+    currentTimeEl.textContent = '0:00';
+    if (audio.paused) {
+      audio.play().then(function () { updatePlayUI(true); }).catch(function () {});
+    }
+  });
+
+  $('skipBtn').addEventListener('click', function () {
+    if (!audio.src) return;
+    audio.currentTime = Math.min(getDuration(), audio.currentTime + 15);
+  });
+
+  audio.addEventListener('loadedmetadata', function () {
+    if (audio.duration && isFinite(audio.duration)) totalTimeEl.textContent = formatTime(audio.duration);
+  });
+  audio.addEventListener('timeupdate', function () {
+    progressFill.style.width = Math.min(100, (audio.currentTime / getDuration()) * 100) + '%';
+    currentTimeEl.textContent = formatTime(audio.currentTime);
+  });
+  audio.addEventListener('ended', function () {
+    updatePlayUI(false);
+    progressFill.style.width = '0%';
+    currentTimeEl.textContent = '0:00';
+  });
+  audio.addEventListener('error', function () {
+    if (!audio.getAttribute('src')) return;
+    updatePlayUI(false);
+    showToast('Preview unavailable right now');
+  });
+
+  progressBar.addEventListener('click', function (e) {
+    if (!audio.src) return;
+    var rect = progressBar.getBoundingClientRect();
+    var ratio = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+    audio.currentTime = ratio * getDuration();
+  });
+})();
+</script>
 </body>
 </html>
