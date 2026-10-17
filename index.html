@@ -384,6 +384,7 @@
 
     .phone-frame.playing .island-dot {
       opacity: 1;
+      box-shadow: 0 0 6px #ffffff;
     }
 
     .phone-topbar {
@@ -395,7 +396,7 @@
       padding: 0 2px;
     }
 
-    /* Monochrome Album Art Frame */
+    /* Album Art Frame */
     .phone-art {
       width: 100%;
       aspect-ratio: 1 / 1;
@@ -414,13 +415,12 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: grayscale(100%) contrast(1.08);
-      transition: transform 0.35s ease, filter 0.35s ease;
+      display: block;
+      transition: transform 0.35s ease;
     }
 
     .phone-frame.playing .album-img {
-      transform: scale(1.03);
-      filter: grayscale(100%) contrast(1.15);
+      transform: scale(1.04);
     }
 
     .phone-track-info {
@@ -450,9 +450,9 @@
 
     .progress-bar {
       width: 100%;
-      height: 4px;
+      height: 5px;
       background: #222222;
-      border-radius: 2px;
+      border-radius: 99px;
       position: relative;
       cursor: pointer;
     }
@@ -461,7 +461,7 @@
       width: 0%;
       height: 100%;
       background: #ffffff;
-      border-radius: 2px;
+      border-radius: 99px;
       position: relative;
       transition: width 0.1s linear;
     }
@@ -471,8 +471,8 @@
       position: absolute;
       right: -4px;
       top: -2px;
-      width: 8px;
-      height: 8px;
+      width: 9px;
+      height: 9px;
       border-radius: 50%;
       background: #ffffff;
     }
@@ -864,7 +864,13 @@
           </div>
 
           <div class="phone-art">
-            <img class="album-img" src="https://i.scdn.co/image/ab67616d0000b273d2a096c4293fbf3aa2a2542a" alt="NEFFEX - Grateful Album Cover" />
+            <img
+              id="albumArtImg"
+              class="album-img"
+              src="https://i.ytimg.com/vi/83RUhxsfLWs/maxresdefault.jpg"
+              onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/83RUhxsfLWs/hqdefault.jpg';"
+              alt="NEFFEX - Grateful Album Cover"
+            />
           </div>
 
           <div>
@@ -895,13 +901,13 @@
                 </svg>
               </span>
 
-              <button class="ctrl-btn" id="restartBtn" type="button" title="Restart track" aria-label="Restart track">
+              <button class="ctrl-btn" id="restartBtn" type="button" title="Restart from 0:00" aria-label="Restart track from beginning">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/>
                 </svg>
               </button>
 
-              <button class="play-circle" id="playPauseBtn" type="button" aria-label="Play or Pause NEFFEX Grateful" title="Play NEFFEX - Grateful">
+              <button class="play-circle" id="playPauseBtn" type="button" aria-label="Play or Pause NEFFEX Grateful" title="Play NEFFEX - Grateful from start">
                 <svg id="playIcon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M8 5v14l11-7z"/>
                 </svg>
@@ -1028,11 +1034,8 @@
     </footer>
   </div>
 
-  <!-- Audio Element for NEFFEX - Grateful -->
-  <audio id="neffexAudio" preload="metadata" crossorigin="anonymous">
-    <source src="https://archive.org/download/neffex-grateful/NEFFEX%20-%20Grateful.mp3" type="audio/mpeg">
-    <source src="https://ia803106.us.archive.org/16/items/neffex-grateful/NEFFEX%20-%20Grateful.mp3" type="audio/mpeg">
-  </audio>
+  <!-- Full-Track Audio Element -->
+  <audio id="neffexAudio" preload="auto"></audio>
 
   <div class="toast" id="toast">Copied to clipboard</div>
 
@@ -1089,8 +1092,9 @@
       document.body.removeChild(tempInput);
     }
 
-    // 3. Interactive NEFFEX - Grateful Phone Player
+    // 3. Full-Track NEFFEX - Grateful (Starts at 0:00, Full 3:02 Song)
     const audio = document.getElementById('neffexAudio');
+    const albumArtImg = document.getElementById('albumArtImg');
     const playPauseBtn = document.getElementById('playPauseBtn');
     const playIcon = document.getElementById('playIcon');
     const pauseIcon = document.getElementById('pauseIcon');
@@ -1101,6 +1105,89 @@
     const totalTimeEl = document.getElementById('totalTime');
     const restartBtn = document.getElementById('restartBtn');
     const skipBtn = document.getElementById('skipBtn');
+
+    // A) Load Official 600x600 Album Cover Art ONLY (from Apple Music / iTunes)
+    window.handleItunesCover = function(data) {
+      if (!data || !data.results || !data.results.length) return;
+      const track = data.results.find(
+        t => t.artistName && t.artistName.toLowerCase().includes('neffex') &&
+             t.trackName && t.trackName.toLowerCase().includes('grateful')
+      ) || data.results[0];
+
+      if (track && track.artworkUrl100) {
+        albumArtImg.src = track.artworkUrl100.replace('100x100bb', '600x600bb');
+      }
+    };
+
+    (function loadCoverArt() {
+      const coverApi = 'https://itunes.apple.com/search?term=NEFFEX+Grateful&entity=song&limit=5';
+      fetch(coverApi)
+        .then(r => r.json())
+        .then(data => window.handleItunesCover(data))
+        .catch(() => {
+          const s = document.createElement('script');
+          s.src = coverApi + '&callback=handleItunesCover';
+          document.body.appendChild(s);
+        });
+    })();
+
+    // B) Resolve Full 3:02 Track Stream from 0:00 via Audius Public API
+    let streamResolvePromise = null;
+
+    async function resolveFullSongStream() {
+      if (audio.src) return audio.src;
+
+      const hosts = [
+        'https://discoveryprovider.audius.co',
+        'https://discoveryprovider2.audius.co',
+        'https://discoveryprovider3.audius.co'
+      ];
+
+      try {
+        const hostRes = await fetch('https://api.audius.co');
+        const hostData = await hostRes.json();
+        if (hostData && Array.isArray(hostData.data) && hostData.data.length) {
+          hosts.unshift(hostData.data[0]);
+        }
+      } catch (_) {}
+
+      for (const host of hosts) {
+        try {
+          const searchUrl = `${host}/v1/tracks/search?query=${encodeURIComponent('NEFFEX Grateful')}&app_name=RavioMusic`;
+          const res = await fetch(searchUrl);
+          if (!res.ok) continue;
+          const json = await res.json();
+          if (json && Array.isArray(json.data) && json.data.length) {
+            // Find the full ~3:02 (182s) original NEFFEX - Grateful track
+            const match = json.data.find(t =>
+              t.title &&
+              t.title.toLowerCase().includes('grateful') &&
+              !t.title.toLowerCase().includes('nightcore') &&
+              !t.title.toLowerCase().includes('slowed') &&
+              t.duration >= 175 && t.duration <= 195
+            ) || json.data.find(t =>
+              t.title && t.title.toLowerCase().includes('grateful')
+            ) || json.data[0];
+
+            if (match && match.id) {
+              const streamUrl = `${host}/v1/tracks/${match.id}/stream?app_name=RavioMusic`;
+              audio.src = streamUrl;
+              audio.currentTime = 0;
+              return streamUrl;
+            }
+          }
+        } catch (_) {}
+      }
+
+      // Fallback full MP3 stream
+      const archiveFallback = 'https://archive.org/download/neffex-grateful/NEFFEX%20-%20Grateful.mp3';
+      audio.src = archiveFallback;
+      audio.currentTime = 0;
+      return archiveFallback;
+    }
+
+    // Pre-resolve the full track on page load so clicking Play starts at 0:00 immediately
+    streamResolvePromise = resolveFullSongStream();
 
     function formatTime(sec) {
       if (!isFinite(sec) || sec < 0) return '0:00';
@@ -1115,12 +1202,17 @@
       phonePlayer.classList.toggle('playing', isPlaying);
     }
 
-    playPauseBtn.addEventListener('click', () => {
+    playPauseBtn.addEventListener('click', async () => {
+      if (!audio.src) {
+        showToast('Loading full track from 0:00...');
+        await streamResolvePromise;
+      }
+
       if (audio.paused) {
         audio.play().then(() => {
           updatePlayUI(true);
         }).catch(() => {
-          showToast('Playing audio stream...');
+          showToast('Buffering full track...');
         });
       } else {
         audio.pause();
@@ -1129,22 +1221,28 @@
     });
 
     restartBtn.addEventListener('click', () => {
+      if (!audio.src) return;
       audio.currentTime = 0;
-      if (audio.paused) audio.play().then(() => updatePlayUI(true)).catch(() => {});
-    });
-
-    skipBtn.addEventListener('click', () => {
-      if (audio.duration) {
-        audio.currentTime = Math.min(audio.duration, audio.currentTime + 15);
+      progressFill.style.width = '0%';
+      currentTimeEl.textContent = '0:00';
+      if (audio.paused) {
+        audio.play().then(() => updatePlayUI(true)).catch(() => {});
       }
     });
 
+    skipBtn.addEventListener('click', () => {
+      const duration = audio.duration || 182;
+      audio.currentTime = Math.min(duration, audio.currentTime + 15);
+    });
+
     audio.addEventListener('loadedmetadata', () => {
-      if (audio.duration) totalTimeEl.textContent = formatTime(audio.duration);
+      if (audio.duration && isFinite(audio.duration)) {
+        totalTimeEl.textContent = formatTime(audio.duration);
+      }
     });
 
     audio.addEventListener('timeupdate', () => {
-      const duration = audio.duration || 182;
+      const duration = (audio.duration && isFinite(audio.duration)) ? audio.duration : 182;
       const pct = Math.min(100, (audio.currentTime / duration) * 100);
       progressFill.style.width = `${pct}%`;
       currentTimeEl.textContent = formatTime(audio.currentTime);
@@ -1157,9 +1255,10 @@
     });
 
     progressBar.addEventListener('click', (e) => {
+      if (!audio.src) return;
       const rect = progressBar.getBoundingClientRect();
       const clickRatio = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
-      const duration = audio.duration || 182;
+      const duration = (audio.duration && isFinite(audio.duration)) ? audio.duration : 182;
       audio.currentTime = clickRatio * duration;
     });
   </script>
