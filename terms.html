@@ -1,994 +1,359 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
-  <link rel="icon" type="image/png" href="ravio_logo.png" />
-<link rel="apple-touch-icon" href="ravio_logo.png" />
-<meta property="og:title" content="Ravio — Pure Music. Zero Limits." />
-<meta property="og:image" content="https://raviomusic.github.io/ravio_logo.png" />
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Terms of Service — Ravio Music</title>
-  <meta charset="UTF-8" />
+<meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Terms of Service — Ravio Music</title>
+<meta name="description" content="Official Terms of Service for Ravio Music. A free, ad-free Android music streaming client developed by Raman Chapagain." />
+<meta name="keywords" content="Ravio Music, Ravio terms of service, free music player android, ad free music streaming" />
+<meta name="theme-color" content="#000000" />
+<link rel="canonical" href="https://raviomusic.github.io/terms" />
 <link rel="icon" type="image/png" sizes="512x512" href="/ravio_logo.png?v=2" />
 <link rel="apple-touch-icon" href="/ravio_logo.png?v=2" />
-<meta name="theme-color" content="#000000" />
-  <link rel="icon" type="image/png" href="ravio_logo.png" />
-<link rel="apple-touch-icon" href="ravio_logo.png" />
-  <meta name="description" content="Official Terms of Service for Ravio Music. A free, ad-free Android music streaming client developed by Raman Chapagain." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root[data-theme="dark"] {
-      --bg: #000000;
-      --bg-elevated: #0a0a0a;
-      --bg-card: #0d0d0d;
-      --bg-btn: #141414;
-      --bg-btn-hover: #1f1f1f;
-      --bg-btn-active: #0f0f0f;
-      --text: #ffffff;
-      --text-secondary: #a3a3a3;
-      --text-muted: #666666;
-      --border: #222222;
-      --border-hover: #404040;
-      --border-strong: #ffffff;
-      --primary-bg: #ffffff;
-      --primary-text: #000000;
-      --primary-hover: #e5e5e5;
-      --shadow: 0 20px 50px rgba(0, 0, 0, 0.9);
-      --btn-shadow: 0 1px 2px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.07);
-    }
-
-    :root[data-theme="light"] {
-      --bg: #ffffff;
-      --bg-elevated: #fafafa;
-      --bg-card: #f7f7f7;
-      --bg-btn: #ffffff;
-      --bg-btn-hover: #f2f2f2;
-      --bg-btn-active: #e6e6e6;
-      --text: #000000;
-      --text-secondary: #4d4d4d;
-      --text-muted: #808080;
-      --border: #e5e5e5;
-      --border-hover: #b3b3b3;
-      --border-strong: #000000;
-      --primary-bg: #000000;
-      --primary-text: #ffffff;
-      --primary-hover: #262626;
-      --shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
-      --btn-shadow: 0 1px 2px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 1);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      transition: background-color 0.2s ease, color 0.2s ease;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    body {
-      min-height: 100vh;
-      overflow-x: hidden;
-      position: relative;
-    }
-
-    .container {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    /* Top Navbar */
-    header {
-      padding: 1.5rem 0;
-      border-bottom: 1px solid var(--border);
-      position: relative;
-      z-index: 50;
-    }
-
-    .nav-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      text-decoration: none;
-      color: var(--text);
-    }
-
-    .logo-circle {
-      width: 38px;
-      height: 38px;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--bg-btn);
-      border: 1px solid var(--border);
-      overflow: hidden;
-    }
-
-    .logo-circle img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: grayscale(100%) contrast(1.1);
-    }
-
-    .brand-title {
-      font-size: 1.15rem;
-      font-weight: 800;
-      letter-spacing: 0.14em;
-      color: var(--text);
-    }
-
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: var(--text-secondary);
-      font-size: 0.875rem;
-      font-weight: 500;
-      transition: color 0.15s ease;
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--text);
-    }
-
-    /* Functional Segmented Theme Switcher */
-    .theme-switch {
-      width: 56px;
-      height: 30px;
-      border-radius: 6px;
-      background: var(--bg-btn);
-      border: 1px solid var(--border);
-      box-shadow: var(--btn-shadow);
-      position: relative;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 7px;
-      color: var(--text-muted);
-      transition: border-color 0.15s ease, background-color 0.15s ease;
-      outline: none;
-    }
-
-    .theme-switch:hover {
-      border-color: var(--border-hover);
-      color: var(--text);
-    }
-
-    .theme-switch:focus-visible {
-      outline: 2px solid var(--border-strong);
-      outline-offset: 2px;
-    }
-
-    .theme-switch svg {
-      width: 13px;
-      height: 13px;
-      z-index: 1;
-      pointer-events: none;
-    }
-
-    .theme-switch .knob {
-      position: absolute;
-      top: 3px;
-      left: 3px;
-      width: 22px;
-      height: 22px;
-      border-radius: 4px;
-      background: var(--text);
-      transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
-      z-index: 2;
-    }
-
-    :root[data-theme="dark"] .theme-switch .knob {
-      transform: translateX(26px);
-    }
-
-    :root[data-theme="light"] .theme-switch .knob {
-      transform: translateX(0px);
-    }
-
-    /* Page Hero */
-    .terms-hero {
-      padding: 4rem 0 3rem;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .hero-meta-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.35rem 0.75rem;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      background: var(--bg-elevated);
-      color: var(--text-secondary);
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
-
-    .hero-badge-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--text);
-    }
-
-    .terms-hero h1 {
-      font-size: clamp(2.4rem, 4.8vw, 3.75rem);
-      font-weight: 800;
-      line-height: 1.06;
-      letter-spacing: -0.04em;
-      margin-bottom: 1rem;
-    }
-
-    .terms-hero p {
-      font-size: 1.02rem;
-      color: var(--text-secondary);
-      max-width: 720px;
-      line-height: 1.65;
-    }
-
-    .client-disclaimer {
-      margin-top: 1.5rem;
-      padding: 0.85rem 1.15rem;
-      background: var(--bg-elevated);
-      border: 1px solid var(--border);
-      border-left: 3px solid var(--text);
-      border-radius: 6px;
-      font-size: 0.85rem;
-      color: var(--text-secondary);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.65rem;
-    }
-
-    .client-disclaimer strong {
-      color: var(--text);
-    }
-
-    /* 3 Summary Cards */
-    .summary-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem;
-      padding: 2.5rem 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .s-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 1.4rem 1.5rem;
-    }
-
-    .s-card-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 0.65rem;
-    }
-
-    .s-card-tag {
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-    }
-
-    .s-card h3 {
-      font-size: 1rem;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-      margin-bottom: 0.4rem;
-    }
-
-    .s-card p {
-      font-size: 0.84rem;
-      color: var(--text-secondary);
-      line-height: 1.55;
-    }
-
-    /* Main 2-Column Layout */
-    .terms-layout {
-      display: grid;
-      grid-template-columns: 260px 1fr;
-      gap: 3rem;
-      padding: 3rem 0 4rem;
-      align-items: start;
-    }
-
-    /* Sticky Functional Sidebar */
-    .terms-sidebar {
-      position: sticky;
-      top: 2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
-    }
-
-    .toc-box {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 1.1rem;
-    }
-
-    .toc-title {
-      font-size: 0.72rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--text-muted);
-      margin-bottom: 0.75rem;
-      padding: 0 0.4rem;
-    }
-
-    .toc-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
-    }
-
-    .toc-link {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      text-decoration: none;
-      color: var(--text-secondary);
-      font-size: 0.82rem;
-      font-weight: 500;
-      padding: 0.5rem 0.6rem;
-      border-radius: 6px;
-      border: 1px solid transparent;
-      transition: all 0.15s ease;
-    }
-
-    .toc-link:hover {
-      background: var(--bg-btn);
-      color: var(--text);
-      border-color: var(--border);
-    }
-
-    .toc-num {
-      font-size: 0.7rem;
-      font-variant-numeric: tabular-nums;
-      color: var(--text-muted);
-      font-weight: 600;
-    }
-
-    .sidebar-actions {
-      display: flex;
-      flex-direction: column;
-      gap: 0.55rem;
-    }
-
-    /* Engineered Utility Buttons */
-    .chip-btn {
-      background: var(--bg-btn);
-      border: 1px solid var(--border);
-      box-shadow: var(--btn-shadow);
-      color: var(--text);
-      padding: 0.62rem 0.95rem;
-      border-radius: 7px;
-      font-family: inherit;
-      font-size: 0.82rem;
-      font-weight: 600;
-      letter-spacing: -0.01em;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.55rem;
-      transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
-    }
-
-    .chip-btn-left {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.55rem;
-    }
-
-    .chip-btn:hover {
-      background: var(--bg-btn-hover);
-      border-color: var(--border-hover);
-    }
-
-    .chip-btn:active {
-      background: var(--bg-btn-active);
-      transform: translateY(1px);
-    }
-
-    .chip-btn:focus-visible {
-      outline: 2px solid var(--border-strong);
-      outline-offset: 2px;
-    }
-
-    .chip-btn svg {
-      width: 14px;
-      height: 14px;
-      color: var(--text-secondary);
-      flex-shrink: 0;
-      transition: color 0.15s ease;
-    }
-
-    .chip-btn:hover svg {
-      color: var(--text);
-    }
-
-    .chip-action-hint {
-      color: var(--text-muted);
-      font-size: 0.7rem;
-      font-weight: 600;
-      padding-left: 0.45rem;
-      border-left: 1px solid var(--border);
-    }
-
-    /* Terms Content Sections */
-    .terms-content {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .terms-section {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 2rem;
-      scroll-margin-top: 2rem;
-    }
-
-    .section-index {
-      display: inline-block;
-      font-size: 0.72rem;
-      font-weight: 700;
-      font-variant-numeric: tabular-nums;
-      letter-spacing: 0.08em;
-      color: var(--text-muted);
-      border: 1px solid var(--border);
-      background: var(--bg-elevated);
-      padding: 0.2rem 0.5rem;
-      border-radius: 4px;
-      margin-bottom: 0.75rem;
-    }
-
-    .terms-section h2 {
-      font-size: 1.3rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      margin-bottom: 1rem;
-      color: var(--text);
-    }
-
-    .terms-section p {
-      font-size: 0.92rem;
-      color: var(--text-secondary);
-      line-height: 1.7;
-      margin-bottom: 1rem;
-    }
-
-    .terms-section p:last-child {
-      margin-bottom: 0;
-    }
-
-    .terms-section strong {
-      color: var(--text);
-      font-weight: 600;
-    }
-
-    .terms-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      margin: 1rem 0;
-    }
-
-    .terms-list li {
-      position: relative;
-      padding-left: 1.25rem;
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
-
-    .terms-list li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0.55rem;
-      width: 6px;
-      height: 6px;
-      border-radius: 1px;
-      background: var(--text);
-    }
-
-    /* Contact / Bottom Action Bar */
-    .contact-bar {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 1.75rem 2rem;
-      margin-bottom: 4rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .contact-info h3 {
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin-bottom: 0.25rem;
-    }
-
-    .contact-info p {
-      font-size: 0.875rem;
-      color: var(--text-secondary);
-    }
-
-    .contact-actions {
-      display: flex;
-      gap: 0.65rem;
-      flex-wrap: wrap;
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 2rem 0 3rem;
-      color: var(--text-muted);
-      font-size: 0.84rem;
-      border-top: 1px solid var(--border);
-    }
-
-    footer strong {
-      color: var(--text);
-      font-weight: 600;
-    }
-
-    /* Monochrome Toast */
-    .toast {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      background: var(--primary-bg);
-      color: var(--primary-text);
-      border: 1px solid var(--border);
-      padding: 0.75rem 1.1rem;
-      border-radius: 8px;
-      font-size: 0.84rem;
-      font-weight: 600;
-      box-shadow: var(--shadow);
-      opacity: 0;
-      transform: translateY(12px);
-      pointer-events: none;
-      transition: all 0.2s ease;
-      z-index: 9999;
-    }
-
-    .toast.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @media print {
-      header, .terms-sidebar, .contact-actions, footer {
-        display: none !important;
-      }
-      .terms-layout {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 860px) {
-      .summary-grid {
-        grid-template-columns: 1fr;
-      }
-      .terms-layout {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-      .terms-sidebar {
-        position: static;
-      }
-      .contact-bar {
-        flex-direction: column;
-        text-align: center;
-      }
-      .contact-actions {
-        justify-content: center;
-      }
-    }
-  </style>
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://raviomusic.github.io/terms" />
+<meta property="og:title" content="Terms of Service — Ravio Music" />
+<meta property="og:description" content="Terms of use for Ravio Music, a free, ad-free third-party streaming client for Android." />
+<meta property="og:image" content="https://raviomusic.github.io/ravio_logo.png?v=2" />
+<meta name="twitter:card" content="summary" />
+<script>
+  try { document.documentElement.setAttribute('data-theme', localStorage.getItem('ravio-theme') === 'light' ? 'light' : 'dark'); } catch (e) {}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root[data-theme="dark"]{--bg:#000;--bg-elevated:#0a0a0a;--bg-card:#0d0d0d;--bg-btn:#141414;--bg-btn-hover:#1f1f1f;--bg-btn-active:#0f0f0f;--text:#fff;--text-secondary:#a3a3a3;--text-muted:#666;--border:#222;--border-hover:#404040;--border-strong:#fff;--primary-bg:#fff;--primary-text:#000;--shadow:0 20px 50px rgba(0,0,0,.9);--btn-shadow:0 1px 2px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.07)}
+:root[data-theme="light"]{--bg:#fff;--bg-elevated:#fafafa;--bg-card:#f7f7f7;--bg-btn:#fff;--bg-btn-hover:#f2f2f2;--bg-btn-active:#e6e6e6;--text:#000;--text-secondary:#4d4d4d;--text-muted:#808080;--border:#e5e5e5;--border-hover:#b3b3b3;--border-strong:#000;--primary-bg:#000;--primary-text:#fff;--shadow:0 20px 40px rgba(0,0,0,.06);--btn-shadow:0 1px 2px rgba(0,0,0,.06),inset 0 1px 0 #fff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background-color:var(--bg);color:var(--text);transition:background-color .2s ease,color .2s ease;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+body{min-height:100vh;overflow-x:hidden;position:relative}
+.container{max-width:1120px;margin:0 auto;padding:0 2rem}
+header{padding:1.5rem 0;border-bottom:1px solid var(--border);position:relative;z-index:50}
+.nav-bar{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:.75rem;text-decoration:none;color:var(--text)}
+.logo-circle{width:38px;height:38px;border-radius:8px;display:flex;align-items:center;justify-content:center;background:var(--bg-btn);border:1px solid var(--border);overflow:hidden}
+.logo-circle img{width:100%;height:100%;object-fit:cover;filter:grayscale(100%) contrast(1.1)}
+.brand-title{font-size:1.15rem;font-weight:800;letter-spacing:.14em;color:var(--text)}
+.nav-right,.nav-links{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.nav-links a{text-decoration:none;color:var(--text-secondary);font-size:.875rem;font-weight:500;transition:color .15s ease}
+.nav-links a:hover,.nav-links a.active{color:var(--text)}
+.theme-switch{width:56px;height:30px;border-radius:6px;background:var(--bg-btn);border:1px solid var(--border);box-shadow:var(--btn-shadow);position:relative;cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:0 7px;color:var(--text-muted);transition:border-color .15s ease,background-color .15s ease;outline:none}
+.theme-switch:hover{border-color:var(--border-hover);color:var(--text)}
+.theme-switch:focus-visible{outline:2px solid var(--border-strong);outline-offset:2px}
+.theme-switch svg{width:13px;height:13px;z-index:1;pointer-events:none}
+.theme-switch .knob{position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:4px;background:var(--text);transition:transform .2s cubic-bezier(.2,.8,.2,1);z-index:2;opacity:.9}
+:root[data-theme="dark"] .theme-switch .knob{transform:translateX(26px)}
+:root[data-theme="light"] .theme-switch .knob{transform:translateX(0)}
+.terms-hero{padding:4rem 0 3rem;border-bottom:1px solid var(--border)}
+.hero-meta-row{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:1.5rem}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;padding:.35rem .75rem;border:1px solid var(--border);border-radius:999px;background:var(--bg-elevated);color:var(--text-secondary);font-size:.75rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.hero-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--text)}
+.terms-hero h1{font-size:clamp(2.4rem,4.8vw,3.75rem);font-weight:800;line-height:1.06;letter-spacing:-.04em;margin-bottom:1rem}
+.terms-hero p{font-size:1.02rem;color:var(--text-secondary);max-width:720px;line-height:1.65}
+.client-disclaimer{margin-top:1.5rem;padding:.85rem 1.15rem;background:var(--bg-elevated);border:1px solid var(--border);border-left:3px solid var(--text);border-radius:6px;font-size:.85rem;color:var(--text-secondary);display:inline-flex;align-items:center;gap:.65rem}
+.client-disclaimer strong{color:var(--text)}
+.summary-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;padding:2.5rem 0;border-bottom:1px solid var(--border)}
+.s-card{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:1.4rem 1.5rem}
+.s-card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:.65rem}
+.s-card-tag{font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted)}
+.s-card h3{font-size:1rem;font-weight:700;letter-spacing:-.01em;margin-bottom:.4rem}
+.s-card p{font-size:.84rem;color:var(--text-secondary);line-height:1.55}
+.terms-layout{display:grid;grid-template-columns:260px 1fr;gap:3rem;padding:3rem 0 4rem;align-items:start}
+.terms-sidebar{position:sticky;top:2rem;display:flex;flex-direction:column;gap:1.25rem}
+.toc-box{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:1.1rem}
+.toc-title{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);margin-bottom:.75rem;padding:0 .4rem}
+.toc-list{list-style:none;display:flex;flex-direction:column;gap:.25rem}
+.toc-link{display:flex;align-items:center;justify-content:space-between;text-decoration:none;color:var(--text-secondary);font-size:.82rem;font-weight:500;padding:.5rem .6rem;border-radius:6px;border:1px solid transparent;transition:all .15s ease}
+.toc-link:hover{background:var(--bg-btn);color:var(--text);border-color:var(--border)}
+.toc-num{font-size:.7rem;font-variant-numeric:tabular-nums;color:var(--text-muted);font-weight:600}
+.sidebar-actions{display:flex;flex-direction:column;gap:.55rem}
+.chip-btn{background:var(--bg-btn);border:1px solid var(--border);box-shadow:var(--btn-shadow);color:var(--text);padding:.62rem .95rem;border-radius:7px;font-family:inherit;font-size:.82rem;font-weight:600;letter-spacing:-.01em;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:space-between;gap:.55rem;transition:background-color .15s ease,border-color .15s ease,transform .1s ease}
+.chip-btn-left{display:inline-flex;align-items:center;gap:.55rem}
+.chip-btn:hover{background:var(--bg-btn-hover);border-color:var(--border-hover)}
+.chip-btn:active{background:var(--bg-btn-active);transform:translateY(1px)}
+.chip-btn:focus-visible{outline:2px solid var(--border-strong);outline-offset:2px}
+.chip-btn svg{width:14px;height:14px;color:var(--text-secondary);flex-shrink:0;transition:color .15s ease}
+.chip-btn:hover svg{color:var(--text)}
+.chip-action-hint{color:var(--text-muted);font-size:.7rem;font-weight:600;padding-left:.45rem;border-left:1px solid var(--border)}
+.terms-content{display:flex;flex-direction:column;gap:1.5rem}
+.terms-section{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:2rem;scroll-margin-top:2rem}
+.section-index{display:inline-block;font-size:.72rem;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:.08em;color:var(--text-muted);border:1px solid var(--border);background:var(--bg-elevated);padding:.2rem .5rem;border-radius:4px;margin-bottom:.75rem}
+.terms-section h2{font-size:1.3rem;font-weight:700;letter-spacing:-.02em;margin-bottom:1rem;color:var(--text)}
+.terms-section p{font-size:.92rem;color:var(--text-secondary);line-height:1.7;margin-bottom:1rem}
+.terms-section p:last-child{margin-bottom:0}
+.terms-section strong{color:var(--text);font-weight:600}
+.terms-list{list-style:none;display:flex;flex-direction:column;gap:.75rem;margin:1rem 0}
+.terms-list li{position:relative;padding-left:1.25rem;font-size:.9rem;color:var(--text-secondary);line-height:1.6}
+.terms-list li::before{content:"";position:absolute;left:0;top:.55rem;width:6px;height:6px;border-radius:1px;background:var(--text)}
+.table-wrap{overflow-x:auto;margin-top:1.1rem;border:1px solid var(--border);border-radius:8px}
+table{width:100%;border-collapse:collapse;text-align:left;font-size:.85rem}
+th{background:var(--bg-elevated);color:var(--text);font-weight:600;padding:.75rem 1rem;border-bottom:1px solid var(--border)}
+td{padding:.75rem 1rem;color:var(--text-secondary);border-bottom:1px solid var(--border);line-height:1.5}
+tr:last-child td{border-bottom:none}
+.mono-code{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;font-size:.78rem;color:var(--text);background:var(--bg-elevated);border:1px solid var(--border);padding:.15rem .4rem;border-radius:4px;white-space:nowrap}
+.contact-bar{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:1.75rem 2rem;margin-bottom:4rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
+.contact-info h3{font-size:1.1rem;font-weight:700;margin-bottom:.25rem}
+.contact-info p{font-size:.875rem;color:var(--text-secondary)}
+.contact-actions{display:flex;gap:.65rem;flex-wrap:wrap}
+footer{text-align:center;padding:2rem 0 3rem;color:var(--text-muted);font-size:.84rem;border-top:1px solid var(--border)}
+footer strong{color:var(--text);font-weight:600}
+.toast{position:fixed;bottom:24px;right:24px;background:var(--primary-bg);color:var(--primary-text);border:1px solid var(--border);padding:.75rem 1.1rem;border-radius:8px;font-size:.84rem;font-weight:600;box-shadow:var(--shadow);opacity:0;transform:translateY(12px);pointer-events:none;transition:all .2s ease;z-index:9999}
+.toast.show{opacity:1;transform:translateY(0)}
+@media print{header,.terms-sidebar,.contact-actions,footer{display:none!important}.terms-layout{grid-template-columns:1fr}}
+@media (max-width:860px){
+.summary-grid{grid-template-columns:1fr}
+.terms-layout{grid-template-columns:1fr;gap:2rem}
+.terms-sidebar{position:static}
+.contact-bar{flex-direction:column;text-align:center}
+.contact-actions{justify-content:center}
+}
+</style>
 </head>
 <body>
-
-  <div class="container">
-    <!-- Top Header -->
-    <header>
-      <div class="nav-bar">
-        <a href="/" class="brand">
-          <div class="logo-circle">
-            <img src="ravio_logo.png" alt="Ravio Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
-            <svg style="display:none;" width="22" height="22" viewBox="0 0 100 100" fill="none">
-              <circle cx="50" cy="50" r="44" stroke="currentColor" stroke-width="6"/>
-              <path d="M34 32H52C60 32 65 37 65 44C65 50 60 54 53 55L66 72H56L44 55H38V72H31V32H34Z" fill="currentColor"/>
-            </svg>
-          </div>
-          <span class="brand-title">RAVIO</span>
-        </a>
-
-        <div class="nav-right">
-          <nav class="nav-links">
-            <a href="/#download">Download</a>
-            <a href="/privacy">Privacy Policy</a>
-            <a href="/terms" class="active">Terms of Service</a>
-            <a href="/#support">Support</a>
-            <a href="https://ramanchapagain.github.io" target="_blank" rel="noopener">Dev Website</a>
-          </nav>
-
-          <!-- Monochrome SVG Theme Switch -->
-          <button class="theme-switch" id="themeSwitch" type="button" aria-label="Toggle Light and Dark Mode">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="5"/>
-              <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
-            </svg>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-            </svg>
-            <span class="knob"></span>
-          </button>
-        </div>
-      </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="terms-hero">
-      <div class="hero-meta-row">
-        <div class="hero-badge">
-          <span class="hero-badge-dot"></span>
-          Legal Agreement • Effective Oct 2026
-        </div>
-        <a href="/" class="chip-btn">
-          <span class="chip-btn-left">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="19" y1="12" x2="5" y2="12"/>
-              <polyline points="12 19 5 12 12 5"/>
-            </svg>
-            Back to Home
-          </span>
-        </a>
-      </div>
-
-      <h1>Terms of Service.</h1>
-      <p>
-        By downloading, installing, or using Ravio Music, you agree to the terms outlined below. Ravio Music is a free-to-use, ad-free Android audio player and streaming client developed and owned by Raman Chapagain.
-      </p>
-
-      <div class="client-disclaimer">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="12" cy="12" r="10"/>
-          <line x1="12" y1="16" x2="12" y2="12"/>
-          <line x1="12" y1="8" x2="12.01" y2="8"/>
-        </svg>
-        <span><strong>Core Disclaimer:</strong> Ravio Music is a third-party streaming client. Ravio Music does not host, store, or hold any of the audio content on its own servers.</span>
-      </div>
-    </section>
-
-    <!-- 3 Key Pillars -->
-    <section class="summary-grid">
-      <div class="s-card">
-        <div class="s-card-top">
-          <span class="s-card-tag">01 // License</span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+<div class="container">
+  <header>
+    <div class="nav-bar">
+      <a href="/" class="brand">
+        <div class="logo-circle">
+          <img src="/ravio_logo.png" alt="Ravio Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+          <svg style="display:none;" width="22" height="22" viewBox="0 0 100 100" fill="none">
+            <circle cx="50" cy="50" r="44" stroke="currentColor" stroke-width="6"/>
+            <path d="M34 32H52C60 32 65 37 65 44C65 50 60 54 53 55L66 72H56L44 55H38V72H31V32H34Z" fill="currentColor"/>
           </svg>
         </div>
-        <h3>Freeware • All Rights Reserved</h3>
-        <p>100% free for personal use with zero ads or subscriptions. Proprietary software owned exclusively by Raman Chapagain.</p>
-      </div>
-
-      <div class="s-card">
-        <div class="s-card-top">
-          <span class="s-card-tag">02 // Architecture</span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="10"/>
-            <polygon points="10 8 16 12 10 16 10 8"/>
+        <span class="brand-title">RAVIO</span>
+      </a>
+      <div class="nav-right">
+        <nav class="nav-links">
+          <a href="/#download">Download</a>
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/terms" class="active">Terms of Service</a>
+          <a href="/#support">Support</a>
+          <a href="https://ramanchapagain.github.io" target="_blank" rel="noopener">Dev Website</a>
+        </nav>
+        <button class="theme-switch" id="themeSwitch" type="button" aria-label="Toggle Light and Dark Mode">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"/>
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
           </svg>
-        </div>
-        <h3>Third-Party Media Client</h3>
-        <p>Ravio acts strictly as a user interface and DSP audio player. No copyrighted music files are hosted or distributed by Ravio.</p>
-      </div>
-
-      <div class="s-card">
-        <div class="s-card-top">
-          <span class="s-card-tag">03 // Distribution</span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-            <polyline points="7 10 12 15 17 10"/>
-            <line x1="12" y1="15" x2="12" y2="3"/>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
           </svg>
-        </div>
-        <h3>Direct & Clean Downloads</h3>
-        <p>Official APKs are distributed directly via GitHub Releases without ad-link shorteners, bundled adware, or paywalls.</p>
+          <span class="knob"></span>
+        </button>
       </div>
-    </section>
-
-    <!-- Main Terms Body -->
-    <div class="terms-layout">
-      <!-- Sticky Sidebar -->
-      <aside class="terms-sidebar">
-        <div class="toc-box">
-          <div class="toc-title">Contents</div>
-          <ul class="toc-list">
-            <li><a href="#acceptance" class="toc-link"><span>Acceptance & Ownership</span><span class="toc-num">01</span></a></li>
-            <li><a href="#license" class="toc-link"><span>License & Intellectual Property</span><span class="toc-num">02</span></a></li>
-            <li><a href="#third-party" class="toc-link"><span>Content & Client Disclaimer</span><span class="toc-num">03</span></a></li>
-            <li><a href="#features" class="toc-link"><span>AI, Lyrics & Offline Cache</span><span class="toc-num">04</span></a></li>
-            <li><a href="#conduct" class="toc-link"><span>Acceptable Use</span><span class="toc-num">05</span></a></li>
-            <li><a href="#security" class="toc-link"><span>Official APK & Integrity</span><span class="toc-num">06</span></a></li>
-            <li><a href="#warranty" class="toc-link"><span>Limitation of Liability</span><span class="toc-num">07</span></a></li>
-          </ul>
-        </div>
-
-        <div class="sidebar-actions">
-          <button class="chip-btn" type="button" onclick="window.print()">
-            <span class="chip-btn-left">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="6 9 6 2 18 2 18 9"/>
-                <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
-                <rect x="6" y="14" width="12" height="8"/>
-              </svg>
-              Print / Save PDF
-            </span>
-            <span class="chip-action-hint">DOC</span>
-          </button>
-
-          <button class="chip-btn" type="button" onclick="copyPageUrl()">
-            <span class="chip-btn-left">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
-                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
-              </svg>
-              Copy Terms URL
-            </span>
-            <span class="chip-action-hint">Copy</span>
-          </button>
-        </div>
-      </aside>
-
-      <!-- Detailed Sections -->
-      <main class="terms-content">
-        <section class="terms-section" id="acceptance">
-          <span class="section-index">SECTION 01</span>
-          <h2>Acceptance of Terms & Ownership</h2>
-          <p>
-            Welcome to <strong>Ravio Music</strong>. Ravio Music is an Android music streaming and local audio player application independently designed, engineered, and maintained by <strong>Raman Chapagain</strong>.
-          </p>
-          <p>
-            By downloading the Ravio APK or accessing this website, you agree to be bound by these Terms of Service. If you do not agree with any part of these terms, please discontinue use and uninstall the application from your device.
-          </p>
-        </section>
-
-        <section class="terms-section" id="license">
-          <span class="section-index">SECTION 02</span>
-          <h2>License Grant & Intellectual Property</h2>
-          <p>
-            Ravio Music is provided as <strong>freeware</strong> for personal, non-commercial use. All source code, software architecture, and brand assets are proprietary and owned by <strong>Raman Chapagain</strong>, with all rights reserved.
-          </p>
-          <ul class="terms-list">
-            <li><strong>Personal Usage Right:</strong> You are granted a revocable, non-exclusive, non-transferable license to download, install, and use Ravio Music on your personal Android devices completely free of charge and free of advertisements.</li>
-            <li><strong>No Unauthorized Redistribution or Modification:</strong> You may not decompile, reverse-engineer, modify, rebrand, inject advertisements into, or redistribute modified builds (APKs) of Ravio Music under any other name or on third-party app stores.</li>
-            <li><strong>Brand & Design Assets:</strong> The Ravio Music name, logo, custom UI layouts, DSP presets, and Ravio Brain AI integration remain the exclusive intellectual property of Raman Chapagain.</li>
-          </ul>
-        </section>
-
-        <section class="terms-section" id="third-party">
-          <span class="section-index">SECTION 03</span>
-          <h2>Third-Party Streaming Client Disclaimer</h2>
-          <p>
-            <strong>Ravio Music is a third-party streaming client. Ravio Music does not host, store, upload, or hold any of the audio or visual content accessible through the application.</strong>
-          </p>
-          <ul class="terms-list">
-            <li><strong>Direct Upstream Fetching:</strong> All music streams, artist metadata, thumbnails, and search results are fetched directly by your device from public third-party endpoints (such as YouTube Music / InnerTube services).</li>
-            <li><strong>Copyright Respect:</strong> All song recordings, album artwork, and lyrics remain the property of their respective copyright holders, record labels, and publishers.</li>
-            <li><strong>No Affiliation:</strong> Ravio Music is an independent project and is not affiliated with, endorsed by, or sponsored by Google LLC, YouTube, Spotify, or any record label.</li>
-          </ul>
-        </section>
-
-        <section class="terms-section" id="features">
-          <span class="section-index">SECTION 04</span>
-          <h2>Ravio Brain AI, Synced Lyrics & Offline Caching</h2>
-          <p>
-            Ravio Music provides advanced audiophile and curation tools subject to the following usage guidelines:
-          </p>
-          <ul class="terms-list">
-            <li><strong>Offline Playback & Local Caching:</strong> The offline caching feature is intended strictly for personal time-shifting and offline convenience within the app. Users are solely responsible for complying with local copyright laws regarding cached media.</li>
-            <li><strong>Ravio Brain AI:</strong> AI-generated Vibe Summaries, Song DNA backstories, taste mixes, and live lyric translations are generated dynamically for informational and entertainment purposes and may occasionally contain inaccuracies.</li>
-            <li><strong>Dual 10-Band EQ & DSP Boost:</strong> High-gain audio settings (such as DSP bass boost and loudness enhancement) can significantly increase output volume. Please use caution with headphones and external speakers to prevent hearing or hardware damage.</li>
-          </ul>
-        </section>
-
-        <section class="terms-section" id="conduct">
-          <span class="section-index">SECTION 05</span>
-          <h2>Acceptable Use & Restrictions</h2>
-          <p>
-            When using Ravio Music, you agree not to misuse the client or interfere with upstream services:
-          </p>
-          <ul class="terms-list">
-            <li>Do not use Ravio Music for automated mass-downloading, commercial broadcasting, or API scraping.</li>
-            <li>Do not sell, rent, or monetize access to the Ravio Music APK or bundle it with third-party installers or adware.</li>
-            <li>If you choose to link your personal streaming account, you remain responsible for complying with the terms of service of that streaming provider.</li>
-          </ul>
-        </section>
-
-        <section class="terms-section" id="security">
-          <span class="section-index">SECTION 06</span>
-          <h2>Official Releases & APK Integrity</h2>
-          <p>
-            Ravio Music never uses ad-link shorteners, pop-up ads, or paid download gates. Official APK builds are published directly via our official GitHub releases and website.
-          </p>
-          <p>
-            We are not responsible for the security or behavior of modified or unofficial APK files downloaded from third-party mirror sites. Always download Ravio Music directly from our official links.
-          </p>
-        </section>
-
-        <section class="terms-section" id="warranty">
-          <span class="section-index">SECTION 07</span>
-          <h2>Disclaimer of Warranties & Limitation of Liability</h2>
-          <p>
-            Ravio Music is provided on an <strong>"AS IS"</strong> and <strong>"AS AVAILABLE"</strong> basis without warranties of any kind, either express or implied. Because Ravio relies on third-party streaming and lyrics APIs, we do not guarantee that every stream or feature will remain uninterrupted if upstream providers alter their protocols.
-          </p>
-          <p>
-            In no event shall <strong>Raman Chapagain</strong> be liable for any direct, indirect, incidental, or consequential damages arising out of the use or inability to use Ravio Music.
-          </p>
-        </section>
-      </main>
     </div>
+  </header>
 
-    <!-- Developer Contact & Verification Bar -->
-    <section class="contact-bar">
-      <div class="contact-info">
-        <h3>Have questions about licensing, terms, or official builds?</h3>
-        <p>Developed and maintained by <strong>Raman Chapagain</strong>. Visit the official links below.</p>
+  <section class="terms-hero">
+    <div class="hero-meta-row">
+      <div class="hero-badge"><span class="hero-badge-dot"></span>Legal Agreement • Effective Oct 2026</div>
+      <a href="/" class="chip-btn">
+        <span class="chip-btn-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          Back to Home
+        </span>
+      </a>
+    </div>
+    <h1>Terms of Service.</h1>
+    <p>By downloading, installing, or using Ravio Music, you agree to the terms outlined below. Ravio Music is a free-to-use, ad-free Android audio player and streaming client developed and owned by Raman Chapagain.</p>
+    <div class="client-disclaimer">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+      <span><strong>Core Disclaimer:</strong> Ravio Music is a third-party streaming client. Ravio Music does not host, store, or hold any of the audio content on its own servers.</span>
+    </div>
+  </section>
+
+  <section class="summary-grid">
+    <div class="s-card">
+      <div class="s-card-top">
+        <span class="s-card-tag">01 // License</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
       </div>
-
-      <div class="contact-actions">
-        <a href="https://ramanchapagain.github.io" target="_blank" rel="noopener" class="chip-btn">
-          <span class="chip-btn-left">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-              <polyline points="15 3 21 3 21 9"/>
-              <line x1="10" y1="14" x2="21" y2="3"/>
-            </svg>
-            Developer Website
-          </span>
-        </a>
-
-        <a href="/privacy" class="chip-btn">
-          <span class="chip-btn-left">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-            </svg>
-            Privacy Policy
-          </span>
-        </a>
+      <h3>Freeware • All Rights Reserved</h3>
+      <p>100% free for personal use with zero ads or subscriptions. Proprietary software owned exclusively by Raman Chapagain.</p>
+    </div>
+    <div class="s-card">
+      <div class="s-card-top">
+        <span class="s-card-tag">02 // Architecture</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
       </div>
-    </section>
+      <h3>Third-Party Media Client</h3>
+      <p>Ravio acts strictly as a user interface and DSP audio player. No copyrighted music files are hosted or distributed by Ravio.</p>
+    </div>
+    <div class="s-card">
+      <div class="s-card-top">
+        <span class="s-card-tag">03 // Distribution</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      </div>
+      <h3>Direct &amp; Clean Downloads</h3>
+      <p>Official APKs are distributed directly via GitHub Releases without ad-link shorteners, bundled adware, or paywalls.</p>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer>
-      Developed by <strong>Raman Chapagain</strong> • © <span id="year"></span> Ravio Music. All rights reserved.
-    </footer>
+  <div class="terms-layout">
+    <aside class="terms-sidebar">
+      <div class="toc-box">
+        <div class="toc-title">Contents</div>
+        <ul class="toc-list">
+          <li><a href="#acceptance" class="toc-link"><span>Acceptance &amp; Ownership</span><span class="toc-num">01</span></a></li>
+          <li><a href="#license" class="toc-link"><span>License &amp; Intellectual Property</span><span class="toc-num">02</span></a></li>
+          <li><a href="#third-party" class="toc-link"><span>Content &amp; Client Disclaimer</span><span class="toc-num">03</span></a></li>
+          <li><a href="#features" class="toc-link"><span>AI, Lyrics &amp; Offline Cache</span><span class="toc-num">04</span></a></li>
+          <li><a href="#conduct" class="toc-link"><span>Acceptable Use</span><span class="toc-num">05</span></a></li>
+          <li><a href="#security" class="toc-link"><span>Official APK &amp; Integrity</span><span class="toc-num">06</span></a></li>
+          <li><a href="#warranty" class="toc-link"><span>Limitation of Liability</span><span class="toc-num">07</span></a></li>
+        </ul>
+      </div>
+      <div class="sidebar-actions">
+        <button class="chip-btn" type="button" onclick="window.print()">
+          <span class="chip-btn-left">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+            Print / Save PDF
+          </span>
+          <span class="chip-action-hint">DOC</span>
+        </button>
+        <button class="chip-btn" type="button" onclick="copyPageUrl()">
+          <span class="chip-btn-left">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            Copy Terms URL
+          </span>
+          <span class="chip-action-hint">Copy</span>
+        </button>
+      </div>
+    </aside>
+
+    <main class="terms-content">
+      <section class="terms-section" id="acceptance">
+        <span class="section-index">SECTION 01</span>
+        <h2>Acceptance of Terms &amp; Ownership</h2>
+        <p>Welcome to <strong>Ravio Music</strong>. Ravio Music is an Android music streaming and local audio player application independently designed, engineered, and maintained by <strong>Raman Chapagain</strong>.</p>
+        <p>By downloading the Ravio APK or accessing this website, you agree to be bound by these Terms of Service. If you do not agree with any part of these terms, please discontinue use and uninstall the application from your device.</p>
+      </section>
+
+      <section class="terms-section" id="license">
+        <span class="section-index">SECTION 02</span>
+        <h2>License Grant &amp; Intellectual Property</h2>
+        <p>Ravio Music is provided as <strong>freeware</strong> for personal, non-commercial use. All source code, software architecture, and brand assets are proprietary and owned by <strong>Raman Chapagain</strong>, with all rights reserved.</p>
+        <ul class="terms-list">
+          <li><strong>Personal Usage Right:</strong> You are granted a revocable, non-exclusive, non-transferable license to download, install, and use Ravio Music on your personal Android devices completely free of charge and free of advertisements.</li>
+          <li><strong>No Unauthorized Redistribution or Modification:</strong> You may not decompile, reverse-engineer, modify, rebrand, inject advertisements into, or redistribute modified builds (APKs) of Ravio Music under any other name or on third-party app stores.</li>
+          <li><strong>Brand &amp; Design Assets:</strong> The Ravio Music name, logo, custom UI layouts, DSP presets, and Ravio Brain AI integration remain the exclusive intellectual property of Raman Chapagain.</li>
+        </ul>
+      </section>
+
+      <section class="terms-section" id="third-party">
+        <span class="section-index">SECTION 03</span>
+        <h2>Third-Party Streaming Client Disclaimer</h2>
+        <p><strong>Ravio Music is a third-party streaming client. Ravio Music does not host, store, upload, or hold any of the audio or visual content accessible through the application.</strong></p>
+        <ul class="terms-list">
+          <li><strong>Direct Upstream Fetching:</strong> All music streams, artist metadata, thumbnails, and search results are fetched directly by your device from public third-party endpoints (such as YouTube Music / InnerTube services).</li>
+          <li><strong>Copyright Respect:</strong> All song recordings, album artwork, and lyrics remain the property of their respective copyright holders, record labels, and publishers.</li>
+          <li><strong>No Affiliation:</strong> Ravio Music is an independent project and is not affiliated with, endorsed by, or sponsored by Google LLC, YouTube, Spotify, or any record label.</li>
+        </ul>
+      </section>
+
+      <section class="terms-section" id="features">
+        <span class="section-index">SECTION 04</span>
+        <h2>Ravio Brain AI, Synced Lyrics &amp; Offline Caching</h2>
+        <p>Ravio Music provides advanced audiophile and curation tools subject to the following usage guidelines:</p>
+        <ul class="terms-list">
+          <li><strong>Offline Playback &amp; Local Caching:</strong> The offline caching feature is intended strictly for personal time-shifting and offline convenience within the app. Users are solely responsible for complying with local copyright laws regarding cached media.</li>
+          <li><strong>Ravio Brain AI:</strong> AI-generated Vibe Summaries, Song DNA backstories, taste mixes, and live lyric translations are generated dynamically for informational and entertainment purposes and may occasionally contain inaccuracies.</li>
+          <li><strong>Dual 10-Band EQ &amp; DSP Boost:</strong> High-gain audio settings (such as DSP bass boost and loudness enhancement) can significantly increase output volume. Please use caution with headphones and external speakers to prevent hearing or hardware damage.</li>
+        </ul>
+      </section>
+
+      <section class="terms-section" id="conduct">
+        <span class="section-index">SECTION 05</span>
+        <h2>Acceptable Use &amp; Restrictions</h2>
+        <p>When using Ravio Music, you agree not to misuse the client or interfere with upstream services:</p>
+        <ul class="terms-list">
+          <li>Do not use Ravio Music for automated mass-downloading, commercial broadcasting, or API scraping.</li>
+          <li>Do not sell, rent, or monetize access to the Ravio Music APK or bundle it with third-party installers or adware.</li>
+          <li>If you choose to link your personal streaming account, you remain responsible for complying with the terms of service of that streaming provider.</li>
+        </ul>
+      </section>
+
+      <section class="terms-section" id="security">
+        <span class="section-index">SECTION 06</span>
+        <h2>Official Releases &amp; APK Integrity</h2>
+        <p>Ravio Music never uses ad-link shorteners, pop-up ads, or paid download gates. Official APK builds are published directly via our official GitHub releases and website.</p>
+        <p>We are not responsible for the security or behavior of modified or unofficial APK files downloaded from third-party mirror sites. Always download Ravio Music directly from our official links.</p>
+      </section>
+
+      <section class="terms-section" id="warranty">
+        <span class="section-index">SECTION 07</span>
+        <h2>Disclaimer of Warranties &amp; Limitation of Liability</h2>
+        <p>Ravio Music is provided on an <strong>"AS IS"</strong> and <strong>"AS AVAILABLE"</strong> basis without warranties of any kind, either express or implied. Because Ravio relies on third-party streaming and lyrics APIs, we do not guarantee that every stream or feature will remain uninterrupted if upstream providers alter their protocols.</p>
+        <p>In no event shall <strong>Raman Chapagain</strong> be liable for any direct, indirect, incidental, or consequential damages arising out of the use or inability to use Ravio Music.</p>
+      </section>
+    </main>
   </div>
 
-  <div class="toast" id="toast">Link copied to clipboard</div>
+  <section class="contact-bar">
+    <div class="contact-info">
+      <h3>Have questions about licensing, terms, or official builds?</h3>
+      <p>Developed and maintained by <strong>Raman Chapagain</strong>. Visit the official links below.</p>
+    </div>
+    <div class="contact-actions">
+      <a href="https://ramanchapagain.github.io" target="_blank" rel="noopener" class="chip-btn">
+        <span class="chip-btn-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Developer Website
+        </span>
+      </a>
+      <a href="/privacy" class="chip-btn">
+        <span class="chip-btn-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Privacy Policy
+        </span>
+      </a>
+    </div>
+  </section>
 
-  <script>
-    // 1. Synced Light / Dark Theme Toggle
-    const root = document.documentElement;
-    const themeSwitch = document.getElementById('themeSwitch');
-    const toast = document.getElementById('toast');
-    document.getElementById('year').textContent = new Date().getFullYear();
+  <footer>Developed by <strong>Raman Chapagain</strong> • © <span id="year"></span> Ravio Music. All rights reserved.</footer>
+</div>
 
-    const savedTheme = localStorage.getItem('ravio-theme') || 'dark';
-    root.setAttribute('data-theme', savedTheme);
+<div class="toast" id="toast" role="status" aria-live="polite">Link copied to clipboard</div>
 
-    themeSwitch.addEventListener('click', () => {
-      const current = root.getAttribute('data-theme');
-      const next = current === 'dark' ? 'light' : 'dark';
-      root.setAttribute('data-theme', next);
-      localStorage.setItem('ravio-theme', next);
-    });
+<script>
+(function () {
+  'use strict';
+  var root = document.documentElement;
+  var toast = document.getElementById('toast');
+  document.getElementById('year').textContent = new Date().getFullYear();
 
-    // 2. Copy Page URL Utility
-    let toastTimer;
-    function showToast(message) {
-      clearTimeout(toastTimer);
-      toast.textContent = message;
-      toast.classList.add('show');
-      toastTimer = setTimeout(() => toast.classList.remove('show'), 2400);
-    }
+  document.getElementById('themeSwitch').addEventListener('click', function () {
+    var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('ravio-theme', next); } catch (e) {}
+  });
 
-    function copyPageUrl() {
-      const url = window.location.href;
-      if (navigator.clipboard && window.isSecureContext) {
-        navigator.clipboard.writeText(url).then(() => {
-          showToast('Terms of Service URL copied to clipboard');
-        }).catch(() => fallbackCopy(url));
-      } else {
-        fallbackCopy(url);
-      }
-    }
-
-    function fallbackCopy(value) {
-      const tempInput = document.createElement('textarea');
-      tempInput.value = value;
-      tempInput.style.position = 'fixed';
-      tempInput.style.opacity = '0';
-      document.body.appendChild(tempInput);
-      tempInput.focus();
-      tempInput.select();
-      try {
-        document.execCommand('copy');
-        showToast('Terms of Service URL copied to clipboard');
-      } catch (e) {
-        showToast(value);
-      }
-      document.body.removeChild(tempInput);
-    }
-  </script>
+  var toastTimer;
+  function showToast(msg) {
+    clearTimeout(toastTimer);
+    toast.textContent = msg;
+    toast.classList.add('show');
+    toastTimer = setTimeout(function () { toast.classList.remove('show'); }, 2400);
+  }
+  function fallbackCopy(value) {
+    var t = document.createElement('textarea');
+    t.value = value; t.style.position = 'fixed'; t.style.opacity = '0';
+    document.body.appendChild(t); t.focus(); t.select();
+    try { document.execCommand('copy'); showToast('Terms of Service URL copied to clipboard'); }
+    catch (e) { showToast(value); }
+    document.body.removeChild(t);
+  }
+  window.copyPageUrl = function () {
+    var url = window.location.href;
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(url)
+        .then(function () { showToast('Terms of Service URL copied to clipboard'); })
+        .catch(function () { fallbackCopy(url); });
+    } else { fallbackCopy(url); }
+  };
+})();
+</script>
 </body>
 </html>
